@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Bhathrinaathan</title>
+<meta name="description" content="Professional experience of Bhathrinaathan — Web Developer at gCurv Technologies and intern at Hexface Consulting.">
+<meta property="og:title" content="Experience — Bhathrinaathan">
+<meta property="og:description" content="Professional experience of Bhathrinaathan — Web Developer at gCurv Technologies and intern at Hexface Consulting.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E89849'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-size='20' font-weight='700' fill='white'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-hero { padding: 140px 48px 60px; border-bottom: 1px solid var(--border); }
+.page-hero h1 { font-family: var(--font-heading); font-size: 48px; font-weight: 700; letter-spacing: -1.5px; }
+.page-hero p { color: var(--text-muted); margin-top: 8px; font-size: 15px; }
+
+.timeline { position: relative; max-width: 720px; }
+.timeline::before {
+  content: ''; position: absolute; left: 15px; top: 0; bottom: 0;
+  width: 2px; background: var(--border);
+}
+.timeline-item {
+  position: relative; padding-left: 48px; padding-bottom: 48px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: 8px; top: 4px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg); border: 2.5px solid var(--accent);
+}
+.timeline-date {
+  font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px;
+}
+.timeline-role {
+  font-family: var(--font-heading); font-size: 20px; font-weight: 600;
+  letter-spacing: -0.3px; margin-bottom: 2px;
+}
+.timeline-company {
+  font-size: 14px; color: var(--text-muted); margin-bottom: 14px;
+}
+.timeline-bullets {
+  list-style: none; display: flex; flex-direction: column; gap: 8px;
+}
+.timeline-bullets li {
+  font-size: 14px; color: var(--text-muted); line-height: 1.7;
+  padding-left: 16px; position: relative;
+}
+.timeline-bullets li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--border);
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">B.</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#education">Education</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#certifications">Certifications</a>
+    <a href="index.html#blog">Blog</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <h1 class="fade-up">Experience</h1>
+  <p class="fade-up">Where I've worked and what I've done.</p>
+</section>
+
+<section class="section">
+  <div class="timeline">
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Jul 2023 – Aug 2024</div>
+      <div class="timeline-role">Web Developer (Intern)</div>
+      <div class="timeline-company">gCurv Technologies LLC</div>
+      <ul class="timeline-bullets">
+        <li>Developed a full-stack web application using the MERN stack and Puppeteer, automating data extraction from various web pages to improve data collection efficiency by 30%.</li>
+        <li>Designed and maintained MongoDB and PostgreSQL databases to handle large-scale scraped data, implementing automated update modules that reduced manual maintenance by 60%.</li>
+        <li>Deployed applications on Google Cloud Platform (GCP) and applied Agile methodology.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Jul 2022 – Aug 2022</div>
+      <div class="timeline-role">Intern</div>
+      <div class="timeline-company">Hexface Consulting, Chennai</div>
+      <ul class="timeline-bullets">
+        <li>Built a Python-based question generator module using NumPy and Matplotlib, increasing quiz generation speed by 50% through automation of data formatting into JSON and LaTeX.</li>
+        <li>Processed and analysed datasets from multiple sources (Excel, text files), improving data accuracy by 20% through enhanced validation scripts.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <span>Bhathrinaathan © 2026</span>
+  <div class="footer-links">
+    <a href="https://github.com/Bhathrinaathan">GitHub</a>
+    <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam">LinkedIn</a>
+    <a href="mailto:muthurab@tcd.ie">Email</a>
+  </div>
+</footer>
+
+<script>
+const observer=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');observer.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

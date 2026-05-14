@@ -1,0 +1,82 @@
+[
+  {
+    "id": "project-tasklist",
+    "title": "TaskList — MERN Task Manager",
+    "description": "A simple full-stack web app for recording and managing daily tasks, built with the MERN stack (MongoDB, Express, React, Node.js).",
+    "tags": ["React", "Node.js", "Express", "MongoDB"],
+    "image": null,
+    "link": "https://github.com/Bhathrinaathan/TaskList",
+    "github": "https://github.com/Bhathrinaathan/TaskList",
+    "date": "2023"
+  },
+  {
+    "id": "project-lucene",
+    "title": "Lucene Search Engine",
+    "description": "Java-based information retrieval system built on Apache Lucene — implements indexing, ranking, and full-text search over document collections.",
+    "tags": ["Java", "Lucene", "Information Retrieval"],
+    "image": null,
+    "link": "https://github.com/Bhathrinaathan/Lucene-search",
+    "github": "https://github.com/Bhathrinaathan/Lucene-search",
+    "date": "2025"
+  },
+  {
+    "id": "project-webscraper",
+    "title": "Full-Stack Web Scraper",
+    "description": "MERN stack application with Puppeteer automating data extraction from web pages, improving data collection efficiency by 30%. Built during internship at gCurv Technologies.",
+    "tags": ["React", "Node.js", "MongoDB", "Puppeteer"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2023 – 2024"
+  },
+  {
+    "id": "project-python-mini",
+    "title": "Python Mini Projects",
+    "description": "A collection of small Python projects and Jupyter notebooks exploring data analysis, automation, and algorithmic problem-solving.",
+    "tags": ["Python", "Jupyter", "Data Analysis"],
+    "image": null,
+    "link": "https://github.com/Bhathrinaathan/Python-Mini-Projects",
+    "github": "https://github.com/Bhathrinaathan/Python-Mini-Projects",
+    "date": "2022 – 2023"
+  },
+  {
+    "id": "project-selenium",
+    "title": "Web Page Testing with Selenium",
+    "description": "A Python-based test automation tool using Selenium for data validation and system reliability analysis with statistical checks for error detection.",
+    "tags": ["Python", "Selenium", "Automation"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "Aug 2022 – Sep 2022"
+  },
+  {
+    "id": "project-resume",
+    "title": "Resume Analysis Web App",
+    "description": "A Streamlit web app that analyses resumes using Pyresparser and provides personalised suggestions and tips to improve them.",
+    "tags": ["Python", "Streamlit", "Pyresparser"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2022"
+  },
+  {
+    "id": "project-leetcode",
+    "title": "LeetCode Solutions",
+    "description": "An organised collection of Java solutions to LeetCode problems — covering data structures, algorithms, and problem-solving patterns.",
+    "tags": ["Java", "DSA", "Algorithms"],
+    "image": null,
+    "link": "https://github.com/Bhathrinaathan/LeetCode",
+    "github": "https://github.com/Bhathrinaathan/LeetCode",
+    "date": "Ongoing"
+  },
+  {
+    "id": "project-skillrack",
+    "title": "SkillRack Problem Solutions",
+    "description": "C language solutions to SkillRack coding practice problems — focused on building fundamentals in pointers, strings, arrays, and algorithms.",
+    "tags": ["C", "Problem Solving"],
+    "image": null,
+    "link": "https://github.com/Bhathrinaathan/SkillRack",
+    "github": "https://github.com/Bhathrinaathan/SkillRack",
+    "date": "2020 – 2021"
+  }
+]

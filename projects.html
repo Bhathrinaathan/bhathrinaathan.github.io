@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Bhathrinaathan</title>
+<meta name="description" content="Projects built by Bhathrinaathan — machine learning pipelines, full-stack web apps, automation tools, and more.">
+<meta property="og:title" content="Projects — Bhathrinaathan">
+<meta property="og:description" content="Projects built by Bhathrinaathan — machine learning pipelines, full-stack web apps, automation tools, and more.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E89849'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-size='20' font-weight='700' fill='white'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-hero {
+  padding: 140px 48px 60px;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 48px; font-weight: 700; letter-spacing: -1.5px;
+}
+.page-hero p { color: var(--text-muted); margin-top: 8px; font-size: 15px; }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.project-card { max-width: none; min-width: 0; }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">B.</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#education">Education</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#certifications">Certifications</a>
+    <a href="index.html#blog">Blog</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <h1 class="fade-up">Projects</h1>
+  <p class="fade-up">Things I've built and explored.</p>
+</section>
+
+<section class="section">
+  <div class="projects-grid fade-up" id="projectsGrid"></div>
+</section>
+
+<footer class="footer">
+  <span>Bhathrinaathan © 2026</span>
+  <div class="footer-links">
+    <a href="https://github.com/Bhathrinaathan">GitHub</a>
+    <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam">LinkedIn</a>
+    <a href="mailto:muthurab@tcd.ie">Email</a>
+  </div>
+</footer>
+
+<script>
+fetch('projects.json').then(r=>r.json()).then(projects=>{
+  const grid=document.getElementById('projectsGrid');
+  const ghIcon=`<svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.337-2.22-.252-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>`;
+  projects.forEach(p=>{
+    const card=document.createElement('div');
+    card.className='project-card';
+    const hasGithub = p.github && p.github !== '#';
+    card.innerHTML=`
+      <div class="project-card-thumb">${p.title}</div>
+      <div class="project-card-body">
+        <div class="project-card-title">${p.title}</div>
+        <div class="project-card-desc">${p.description}</div>
+        <div class="project-card-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <div class="project-card-footer">
+          <span class="project-card-date">${p.date||''}</span>
+          ${hasGithub ? `<a href="${p.github}" target="_blank" rel="noopener" class="btn-github">${ghIcon} GitHub</a>` : ''}
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+});
+const observer=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');observer.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "project-transformers-gpt",
+    "title": "MathGPT & BooleanGPT — Transformers from Scratch",
+    "description": "Decoder-only GPT transformer models built from scratch in PyTorch to learn symbolic reasoning: arithmetic (MathGPT, 2.24M params, 78.2% exact-match) and Boolean logic (BooleanGPT, 0.34M params, 98% exact-match). Implemented self-attention, multi-head attention, positional embeddings and residual blocks, then analysed how network depth must scale with algorithmic complexity (O(n) addition vs O(n^2) multiplication) and how dropout trades off against task determinism.",
+    "tags": ["Python", "PyTorch", "Transformers", "Deep Learning", "Self-Attention"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2026"
+  },
+  {
+    "id": "project-fakenews-temporal",
+    "title": "Temporal Signals of Deception — Fake News NLP",
+    "description": "NLP study testing whether tense usage and temporal structure distinguish fake from verified news across 35,888 articles (ISOT dataset). Built a feature pipeline with spaCy (POS tagging, dependency parsing, tense/aspect classification), sentence-transformer and entity-grid coherence scores, and temporal-expression extraction. A classifier using only temporal/structural features reached 0.89 AUC with no lexical content, showing tense profile is a genuine, language-agnostic signal of deception.",
+    "tags": ["Python", "NLP", "spaCy", "scikit-learn", "Sentence Transformers"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2026"
+  },
+  {
+    "id": "project-game-agents",
+    "title": "Game-Playing Agents — Minimax & Reinforcement Learning",
+    "description": "Built and benchmarked three families of agents for Tic Tac Toe and Connect 4: Minimax with alpha-beta pruning and depth-limited search, tabular Q-Learning, and a Double DQN with experience replay in PyTorch, all against a rule-based baseline. Ran a 20,000-game round-robin tournament with a Tkinter GUI for interactive play. Alpha-beta pruning cut Tic Tac Toe search ~27x; depth-5 Minimax dominated overall (0.94 win rate), while RL agents beat their training opponent but overfit against tree search — a clear study of the search-vs-learning trade-off.",
+    "tags": ["Python", "PyTorch", "Reinforcement Learning", "Minimax", "DQN"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2026"
+  },
+  {
+    "id": "project-multiagent-orchestration",
+    "title": "LLM Multi-Agent Orchestration — Critical Review",
+    "description": "Critical literature review of 18 papers (2023–2026) on how LLM-based multi-agent systems are orchestrated, spanning centralized pipelines (MetaGPT, ChatDev), decentralized debate and ensembles (peer debate, Mixture-of-Agents), and learned / RL-optimized topologies (GPTSwarm, DyLAN, evolving orchestration). Evaluated each paradigm on reliability, scalability and cost, and synthesised the field's shift from hand-designed to learned orchestration in agentic AI.",
+    "tags": ["LLM Agents", "Agentic AI", "Multi-Agent Systems", "NLP", "Literature Review"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2026"
+  },
+  {
+    "id": "project-disaster-ert",
+    "title": "Response to City Disasters — Disaster Management Platform",
+    "description": "Multi-user disaster management platform built by a 10-person team using Extreme Programming (Spring Boot / Java 17, React, PostgreSQL, Kafka ingestion, AWS, GitHub Actions CI/CD). Civilians report incidents by form or voice and view shelters and evacuation routes; authorities validate reports through multi-source aggregation and confidence scoring, then dispatch resources. My contributions: the Emergency Response Team (ERT) resource-allocation engine (computes required vehicles from disaster type/severity/scale, routes through authority approval, then allocates nearest units across Garda / Fire Brigade / HSE / Council with cross-department substitution), an LLM-backed disaster-summary report generator, and the AI rerouting test cases plus cross-service integration.",
+    "tags": ["Java", "Spring Boot", "React", "PostgreSQL", "LLM Integration"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2025 – 2026"
+  },
+  {
+    "id": "project-carskg",
+    "title": "CarsKG — Automotive Knowledge Graph",
+    "description": "Semantic-web knowledge graph modelling the automotive industry — parent companies, manufacturers, car models, specifications and sales. Designed an OWL ontology (8 classes, 14 object + 15 data properties) with transitive, symmetric and inverse properties, transformed CSV data into RDF via RML mappings (28 car instances), authored 7 advanced SPARQL queries (aggregation, property paths, sub-queries) in GraphDB, validated data with SHACL shapes, and integrated external Linked Open Data sources.",
+    "tags": ["Knowledge Graphs", "OWL", "RDF", "SPARQL", "SHACL"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2025"
+  },
+  {
+    "id": "project-offscript",
+    "title": "OffScript — Adaptive Activity Recommender",
+    "description": "Context-aware recommendation system that plans weekend activities by analysing a user's calendar workload, stated preferences and ongoing feedback. Uses a hybrid stereotype/overlay user model with a weighted preference vector and an 80/20 exploit-explore split to avoid filter bubbles, filtered by location, weather and free-time slots. Built with a React frontend, Python FastAPI backend, PostgreSQL, and a scikit-learn recommendation engine integrating Calendar and Weather APIs.",
+    "tags": ["React", "Python", "FastAPI", "PostgreSQL", "Recommendation Systems"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2025 – 2026"
+  },
+  {
+    "id": "project-maze-search-mdp",
+    "title": "Maze Pathfinding — Search vs MDP",
+    "description": "Comparative analysis of six pathfinding algorithms — BFS, DFS, A* (Manhattan & Euclidean heuristics), Value Iteration and Policy Iteration — benchmarked across maze sizes from 10x10 to 100x100. Built a maze generator, an interactive Tkinter visualiser, and a metrics-logging system measuring path optimality, nodes explored and runtime. Showed classical search solves deterministic mazes ~100-6500x faster than MDP planners while both achieve optimal paths.",
+    "tags": ["Python", "Search Algorithms", "Reinforcement Learning", "A*", "MDP"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2026"
+  },
+  {
+    "id": "project-lucene",
+    "title": "Lucene Search Engine",
+    "description": "Java information retrieval system built on Apache Lucene (8.11.4), deployed on a Microsoft Azure Ubuntu VM, that indexes and searches the Cranfield Collection (1,400 abstracts, 225 queries). Benchmarked 25 analyzer/similarity combinations (Standard, Simple, English, Whitespace, Custom x BM25, Classic, Boolean, LM-Dirichlet, LM-Jelinek-Mercer) and evaluated with TREC Eval. BM25 with a custom analyzer gave the best retrieval effectiveness (MAP 0.425).",
+    "tags": ["Java", "Lucene", "Information Retrieval", "Azure"],
+    "image": null,
+    "link": "https://github.com/Bhathrinaathan/Lucene-search",
+    "github": "https://github.com/Bhathrinaathan/Lucene-search",
+    "date": "2025"
+  },
+  {
+    "id": "project-webscraper",
+    "title": "Full-Stack Web Scraper",
+    "description": "MERN stack application with Puppeteer automating data extraction from web pages, improving data collection efficiency by 30%. Built during internship at gCurv Technologies.",
+    "tags": ["React", "Node.js", "MongoDB", "Puppeteer"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2023 – 2024"
+  },
+  {
+    "id": "project-resume",
+    "title": "Resume Analysis Web App",
+    "description": "A Streamlit web app that analyses resumes using Pyresparser and provides personalised suggestions and tips to improve them.",
+    "tags": ["Python", "Streamlit", "Pyresparser"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "2022"
+  },
+  {
+    "id": "project-tasklist",
+    "title": "TaskList — MERN Task Manager",
+    "description": "A simple full-stack web app for recording and managing daily tasks, built with the MERN stack (MongoDB, Express, React, Node.js).",
+    "tags": ["React", "Node.js", "Express", "MongoDB"],
+    "image": null,
+    "link": "https://github.com/Bhathrinaathan/TaskList",
+    "github": "https://github.com/Bhathrinaathan/TaskList",
+    "date": "2023"
+  },
+  {
+    "id": "project-python-mini",
+    "title": "Python Mini Projects",
+    "description": "A collection of small Python projects and Jupyter notebooks exploring data analysis, automation, and algorithmic problem-solving.",
+    "tags": ["Python", "Jupyter", "Data Analysis"],
+    "image": null,
+    "link": "https://github.com/Bhathrinaathan/Python-Mini-Projects",
+    "github": "https://github.com/Bhathrinaathan/Python-Mini-Projects",
+    "date": "2022 – 2023"
+  },
+  {
+    "id": "project-selenium",
+    "title": "Web Page Testing with Selenium",
+    "description": "A Python-based test automation tool using Selenium for data validation and system reliability analysis with statistical checks for error detection.",
+    "tags": ["Python", "Selenium", "Automation"],
+    "image": null,
+    "link": "#",
+    "github": "#",
+    "date": "Aug 2022 – Sep 2022"
+  }
+]

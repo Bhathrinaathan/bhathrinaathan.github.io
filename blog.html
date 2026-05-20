@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Bhathrinaathan</title>
+<meta name="description" content="Articles and thoughts on AI, software engineering, and computer science by Bhathrinaathan.">
+<meta property="og:title" content="Blog — Bhathrinaathan">
+<meta property="og:description" content="Articles and thoughts on AI, software engineering, and computer science by Bhathrinaathan.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E89849'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-size='20' font-weight='700' fill='white'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-hero { padding: 140px 48px 60px; border-bottom: 1px solid var(--border); }
+.page-hero h1 { font-family: var(--font-heading); font-size: 48px; font-weight: 700; letter-spacing: -1.5px; }
+.page-hero p { color: var(--text-muted); margin-top: 8px; font-size: 15px; }
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+.blog-post {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-decoration: none; color: inherit;
+}
+.blog-post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+}
+.blog-post-date { font-size: 13px; color: var(--accent); font-weight: 500; }
+.blog-post-title {
+  font-family: var(--font-heading); font-size: 20px; font-weight: 600;
+  letter-spacing: -0.3px;
+}
+.blog-post-summary {
+  font-size: 14px; color: var(--text-muted); line-height: 1.7;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.blog-post-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.empty-state {
+  text-align: center; padding: 80px 24px; color: var(--text-muted);
+}
+.empty-icon {
+  width: 64px; height: 64px; border-radius: 16px;
+  background: var(--accent-light); margin: 0 auto 20px;
+  display: flex; align-items: center; justify-content: center;
+}
+.empty-state h3 {
+  font-family: var(--font-heading); font-size: 20px;
+  color: var(--text); margin-bottom: 8px;
+}
+.empty-state p { font-size: 14px; max-width: 360px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">B.</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#education">Education</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#certifications">Certifications</a>
+    <a href="index.html#blog">Blog</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <h1 class="fade-up">Blog</h1>
+  <p class="fade-up">Thoughts and learnings.</p>
+</section>
+
+<section class="section">
+  <div class="blog-grid fade-up" id="blogGrid"></div>
+  <div id="blogEmpty" style="display:none">
+    <div class="empty-state">
+      <div class="empty-icon">
+        <svg width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <h3>Coming soon</h3>
+      <p>Blog posts are on the way. Check back later for articles on AI, software engineering, and more.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>Bhathrinaathan © 2026</span>
+  <div class="footer-links">
+    <a href="https://github.com/Bhathrinaathan">GitHub</a>
+    <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam">LinkedIn</a>
+    <a href="mailto:muthurab@tcd.ie">Email</a>
+  </div>
+</footer>
+
+<script>
+fetch('blogs.json').then(r=>r.json()).then(posts=>{
+  const grid=document.getElementById('blogGrid');
+  const empty=document.getElementById('blogEmpty');
+  if(!posts.length){ empty.style.display='block'; grid.style.display='none'; return; }
+  posts.forEach(p=>{
+    const card=document.createElement('a');
+    card.href=p.link||'#';
+    card.className='blog-post';
+    const d=new Date(p.date);
+    const dateStr=d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+    card.innerHTML=`
+      <div class="blog-post-date">${dateStr}</div>
+      <div class="blog-post-title">${p.title}</div>
+      <div class="blog-post-summary">${p.summary}</div>
+      <div class="blog-post-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    `;
+    grid.appendChild(card);
+  });
+});
+const observer=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');observer.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

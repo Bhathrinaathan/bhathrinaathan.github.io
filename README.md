@@ -12,14 +12,15 @@ A minimalist, JSON-driven portfolio site built with vanilla HTML, CSS, and JavaS
 
 ## 🎨 Features
 
-- **Single-page experience** with smooth scroll navigation and live scroll-spy
-- **Animated tagline** that cycles through roles (AI Engineer, Software Developer, MSc Student, AI Enthusiast)
-- **Horizontally scrollable cards** for projects, certifications, and blog posts
+- **Dark & light mode** — follows the OS preference, with a toggle in the nav that remembers the choice (no flash on load)
+- **Terminal hero** — a typed `profile.json` panel next to the intro, plus a proof strip of headline metrics
+- **Featured projects** on the home page with metric chips; full grid with category filters on `projects.html`
 - **JSON-driven content** — update entries without editing HTML
-- **Responsive design** that adapts cleanly to mobile and desktop
-- **Floating geometric illustrations** in the hero section
-- **Contact form** + direct social links (GitHub, LinkedIn, Email)
-- **Resume download** built in
+- **Responsive** — mobile menu, fluid type, no horizontal scroll at 375px
+- **Accessible** — keyboard focus rings, `aria-*` on controls, `prefers-reduced-motion` respected
+- **Fast** — 35 KB WebP profile photo (down from 5 MB), preconnected fonts, no framework
+- **SEO** — Open Graph image, canonical URLs, JSON-LD Person schema, `robots.txt`, `sitemap.xml`
+- **Contact form** that opens a pre-filled email draft (no backend, nothing stored)
 
 ## 🛠️ Tech Stack
 
@@ -28,7 +29,7 @@ A minimalist, JSON-driven portfolio site built with vanilla HTML, CSS, and JavaS
 | Markup | HTML5 |
 | Styling | CSS3 with custom properties + flex/grid |
 | Logic | Vanilla JavaScript (ES6+) |
-| Fonts | Space Grotesk + DM Sans (Google Fonts) |
+| Fonts | Space Grotesk + DM Sans + JetBrains Mono (Google Fonts) |
 | Hosting | GitHub Pages |
 
 No frameworks. No build tools. Just the web platform.
@@ -43,13 +44,17 @@ portfolio/
 ├── experience.html        # Career timeline
 ├── blog.html              # Blog listing
 ├── contact.html           # Contact page
-├── styles.css             # Shared design system
+├── styles.css             # Design system: light/dark tokens + all components
+├── site.js                # Theme toggle, mobile nav, project cards, skills list, mailto form
+├── tech-icons.js          # Tag → icon lookup (Simple Icons CDN + custom SVGs)
 ├── projects.json          # ← Edit to add projects
 ├── certifications.json    # ← Edit to add certifications
 ├── blogs.json             # ← Edit to add blog posts
+├── robots.txt / sitemap.xml
 └── assets/
     ├── Bhathrinaathan-Resume.pdf
-    └── profile.jpg
+    ├── profile.webp / profile-800.jpg
+    └── og-image.png       # Social share card
 ```
 
 ## ✏️ Adding Content
@@ -62,8 +67,12 @@ Append an entry to **`projects.json`**:
 {
   "id": "project-new",
   "title": "Project Name",
-  "description": "Short 1–2 sentence summary.",
+  "description": "What the problem was, what you built, and what it scored.",
   "tags": ["Python", "PyTorch"],
+  "category": "AI / ML",
+  "featured": false,
+  "highlights": ["0.91 F1", "12k samples"],
+  "context": "Coursework · TCD",
   "image": null,
   "link": "https://github.com/Bhathrinaathan/repo",
   "github": "https://github.com/Bhathrinaathan/repo",
@@ -71,7 +80,11 @@ Append an entry to **`projects.json`**:
 }
 ```
 
-The GitHub button appears automatically when `github` is a real URL (not `"#"`).
+- `category` drives the filter pills on `projects.html` (`AI / ML`, `Agents & RL`, `Data & IR`, `Software`, or add your own).
+- `featured: true` puts the project in the home-page grid (first four featured entries are shown).
+- `highlights` are short metric chips shown above the description. Keep them to real numbers.
+- The GitHub button appears automatically when `github` is a real URL (not `"#"`); otherwise the `context` label is shown.
+- Skills live in the `SKILLS` array at the bottom of `site.js` and render on both the home page and `about.html`.
 
 ### New certification
 
@@ -91,7 +104,7 @@ Append to **`certifications.json`**:
 
 ### New blog post
 
-Append to **`blogs.json`**:
+Append to **`blogs.json`**. Posts whose `link` is not a real URL are treated as drafts and hidden; the Writing section on the home page only appears once at least one post is published.
 
 ```json
 {
@@ -130,7 +143,7 @@ git push
 
 ## 📬 Contact
 
-- **Email** — [muthurab@tcd.ie](mailto:muthurab@tcd.ie)
+- **Email** — [bhathrinaathan@gmail.com](mailto:bhathrinaathan@gmail.com)
 - **LinkedIn** — [bhathrinaathan-muthuramalingam](https://linkedin.com/in/bhathrinaathan-muthuramalingam)
 - **GitHub** — [@Bhathrinaathan](https://github.com/Bhathrinaathan)
 - **Location** — Dublin, Ireland

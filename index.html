@@ -3,660 +3,467 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhathrinaathan — Portfolio</title>
-<meta name="description" content="Bhathrinaathan Muthuramalingam — MSc Computer Science (Intelligent Systems) at Trinity College Dublin. AI Engineer, Software Developer, and AI Enthusiast.">
-<meta property="og:title" content="Bhathrinaathan — Portfolio">
-<meta property="og:description" content="Bhathrinaathan Muthuramalingam — MSc Computer Science (Intelligent Systems) at Trinity College Dublin. AI Engineer, Software Developer, and AI Enthusiast.">
+<title>Bhathrinaathan — AI / ML Engineer</title>
+<meta name="description" content="Bhathrinaathan Muthuramalingam — AI / ML engineer and MSc Computer Science (Intelligent Systems) student at Trinity College Dublin. Transformers from scratch, NLP, reinforcement learning and LLM agent systems.">
+<link rel="canonical" href="https://bhathrinaathan.github.io/">
+<meta name="theme-color" content="#faf9f7">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Bhathrinaathan — AI / ML Engineer">
+<meta property="og:description" content="Transformers from scratch, NLP, reinforcement learning and LLM agent systems. MSc Intelligent Systems at Trinity College Dublin.">
+<meta property="og:url" content="https://bhathrinaathan.github.io/">
+<meta property="og:image" content="https://bhathrinaathan.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E89849'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-size='20' font-weight='700' fill='white'%3EB%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles.css">
-<script src="tech-icons.js"></script>
-<style>
-/* ── Hero split ── */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
-  padding-top: 72px;
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261116b">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bhathrinaathan Muthuramalingam Bhanumathi",
+  "alternateName": "Bhathrinaathan",
+  "url": "https://bhathrinaathan.github.io/",
+  "image": "https://bhathrinaathan.github.io/assets/profile-800.jpg",
+  "jobTitle": "AI / ML Engineer",
+  "email": "mailto:bhathrinaathan@gmail.com",
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Trinity College Dublin" },
+    { "@type": "CollegeOrUniversity", "name": "R.M.K College of Engineering and Technology" }
+  ],
+  "address": { "@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "IE" },
+  "sameAs": [
+    "https://github.com/Bhathrinaathan",
+    "https://linkedin.com/in/bhathrinaathan-muthuramalingam"
+  ],
+  "knowsAbout": ["Machine Learning", "Natural Language Processing", "Transformers", "Reinforcement Learning", "LLM Agents", "Knowledge Graphs", "Information Retrieval"]
 }
-.hero-left {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 80px 60px 80px 48px;
-}
-.hero-greeting {
-  font-family: var(--font-heading);
-  font-size: 14px; font-weight: 500;
-  color: var(--accent); letter-spacing: 1px;
-  text-transform: uppercase; margin-bottom: 16px;
-}
-.hero-name {
-  font-family: var(--font-heading);
-  font-size: clamp(48px, 5vw, 72px);
-  font-weight: 700; line-height: 1.05;
-  letter-spacing: -2px; color: var(--text);
-  margin-bottom: 16px;
-}
-.hero-tagline-wrap {
-  height: 28px; overflow: hidden; position: relative;
-  margin-bottom: 24px;
-}
-.hero-tagline {
-  font-size: 18px; font-weight: 400; color: var(--accent);
-  position: absolute; left: 0;
-  opacity: 0; transform: translateY(12px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-.hero-tagline.active {
-  opacity: 1; transform: translateY(0);
-}
-.hero-tagline.exit {
-  opacity: 0; transform: translateY(-12px);
-}
-.hero-bio {
-  font-size: 15px; color: var(--text-muted); line-height: 1.7;
-  max-width: 440px; margin-bottom: 32px;
-}
-.hero-buttons { display: flex; gap: 12px; }
-.hero-social {
-  display: flex; gap: 12px; margin-top: 40px;
-}
-.hero-social a {
-  width: 40px; height: 40px; border-radius: 50%;
-  border: 1.5px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s;
-}
-.hero-social a:hover {
-  border-color: var(--accent); background: var(--accent-light);
-}
-.hero-social svg { width: 16px; height: 16px; }
-
-/* ── Geometric illustration ── */
-.hero-right {
-  background: var(--accent-light);
-  position: relative; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-}
-.geo-canvas {
-  width: 100%; height: 100%; position: absolute; inset: 0;
-}
-.geo-shape {
-  position: absolute; border-radius: 50%;
-  opacity: 0.5;
-  animation: float 8s ease-in-out infinite;
-}
-.geo-shape:nth-child(1) {
-  width: 300px; height: 300px;
-  background: var(--accent);
-  opacity: 0.12; top: 15%; left: 20%;
-  animation-delay: 0s;
-}
-.geo-shape:nth-child(2) {
-  width: 180px; height: 180px;
-  border: 3px solid var(--accent);
-  background: none; opacity: 0.25;
-  top: 50%; right: 15%;
-  animation-delay: -2s;
-}
-.geo-shape:nth-child(3) {
-  width: 120px; height: 120px;
-  background: var(--accent);
-  opacity: 0.08; bottom: 20%; left: 35%;
-  border-radius: 16px;
-  transform: rotate(45deg);
-  animation-delay: -4s;
-}
-.geo-shape:nth-child(4) {
-  width: 60px; height: 60px;
-  background: var(--accent);
-  opacity: 0.2; top: 25%; right: 30%;
-  border-radius: 4px;
-  animation-delay: -1s;
-}
-.geo-shape:nth-child(5) {
-  width: 220px; height: 220px;
-  border: 2px dashed var(--accent);
-  background: none; opacity: 0.15;
-  bottom: 10%; right: 25%;
-  animation-delay: -3s;
-}
-.geo-shape:nth-child(6) {
-  width: 40px; height: 40px;
-  background: var(--accent);
-  opacity: 0.3; top: 60%; left: 15%;
-  border-radius: 50%;
-  animation-delay: -5s;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
-}
-
-/* ── Divider line between hero sections ── */
-.hero-right::before {
-  content: ''; position: absolute; left: 0; top: 10%; bottom: 10%;
-  width: 1px; background: var(--border);
-}
-
-/* ── Projects section ── */
-.projects-section { border-top: 1px solid var(--border); }
-.projects-header {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 24px;
-}
-.scroll-hint {
-  font-size: 12px; color: var(--text-muted);
-  display: flex; align-items: center; gap: 6px;
-}
-
-/* ── Experience list ── */
-.exp-list { display: flex; flex-direction: column; gap: 0; }
-.exp-item {
-  display: flex; gap: 20px; padding: 24px 0;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-}
-.exp-item:last-child { border-bottom: none; }
-.exp-dot {
-  width: 12px; height: 12px; border-radius: 50%;
-  border: 2.5px solid var(--accent); background: var(--bg);
-  flex-shrink: 0; margin-top: 4px;
-}
-.exp-content { flex: 1; }
-.exp-date { font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 4px; }
-.exp-role { font-family: var(--font-heading); font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
-.exp-company { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
-.exp-summary { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-
-/* ── Education cards ── */
-.edu-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.edu-card {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.edu-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-}
-.edu-card-accent { height: 4px; background: var(--accent); }
-.edu-card-body { padding: 24px; }
-.edu-card-degree { font-family: var(--font-heading); font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-.edu-card-school { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
-.edu-card-date { font-size: 13px; color: var(--accent); font-weight: 500; }
-
-/* ── Blog cards ── */
-.blog-card {
-  min-width: 300px; max-width: 300px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  scroll-snap-align: start;
-  transition: transform 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column; gap: 10px;
-  text-decoration: none; color: inherit;
-}
-.blog-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-}
-.blog-card-date {
-  font-size: 12px; color: var(--accent); font-weight: 500;
-}
-.blog-card-title {
-  font-family: var(--font-heading);
-  font-size: 16px; font-weight: 600; letter-spacing: -0.2px;
-}
-.blog-card-summary {
-  font-size: 13px; color: var(--text-muted); line-height: 1.6;
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-}
-
-/* ── Certifications ── */
-.cert-card {
-  min-width: 300px; max-width: 300px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  scroll-snap-align: start;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.cert-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-}
-.cert-card-top {
-  height: 6px; background: var(--accent);
-}
-.cert-card-body { padding: 24px; }
-.cert-card-issuer {
-  font-size: 12px; font-weight: 600; color: var(--accent);
-  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
-}
-.cert-card-title {
-  font-family: var(--font-heading);
-  font-size: 16px; font-weight: 600; margin-bottom: 8px;
-  letter-spacing: -0.2px;
-}
-.cert-card-desc {
-  font-size: 13px; color: var(--text-muted); line-height: 1.6;
-  margin-bottom: 14px;
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-}
-.cert-card-footer {
-  display: flex; justify-content: space-between; align-items: center;
-}
-.cert-card-date { font-size: 12px; color: var(--text-muted); }
-
-/* ── Skills section ── */
-.skills-section { border-top: 1px solid var(--border); }
-
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-right { min-height: 300px; }
-  .hero-left { padding: 60px 24px; }
-}
-</style>
+</script>
 </head>
 <body>
 
 <!-- Nav -->
-<nav class="nav">
-  <a href="index.html" class="nav-logo">B.</a>
-  <div class="nav-links">
-    <a href="#hero" data-section="hero" class="active">Home</a>
-    <a href="#projects" data-section="projects">Projects</a>
-    <a href="#experience" data-section="experience">Experience</a>
-    <a href="#education" data-section="education">Education</a>
-    <a href="#skills" data-section="skills">Skills</a>
-    <a href="#certifications" data-section="certifications">Certifications</a>
-    <a href="#blog" data-section="blog">Blog</a>
-    <a href="#about" data-section="about">About</a>
-    <a href="#contact" data-section="contact">Contact</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Home">B<span class="dot">.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#projects" data-section="projects">Projects</a>
+      <a href="#experience" data-section="experience">Experience</a>
+      <a href="#skills" data-section="skills">Skills</a>
+      <a href="blog.html">Writing</a>
+      <a href="#about" data-section="about">About</a>
+      <a href="#contact" data-section="contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="icon-btn nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
 
+<main>
+
 <!-- Hero -->
-<section class="hero" id="hero">
-  <div class="hero-left">
-    <div class="hero-greeting fade-up">Hi, I'm</div>
-    <h1 class="hero-name fade-up">Bhathrinaathan</h1>
-    <div class="hero-tagline-wrap fade-up">
-      <span class="hero-tagline active">AI / ML Engineer</span>
-      <span class="hero-tagline">Intelligent Systems Researcher</span>
-      <span class="hero-tagline">Full-Stack Developer</span>
-      <span class="hero-tagline">MSc Student @ TCD</span>
-      <span class="hero-tagline">Code · Coffee · Curiosity</span>
-      <span class="hero-tagline">From data to decisions</span>
-      <span class="hero-tagline">Building smarter software</span>
+<section class="container" id="hero">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-greeting fade-up">Hi, I'm</div>
+      <h1 class="hero-name fade-up">Bhathrinaathan</h1>
+      <div class="hero-tagline-wrap fade-up" aria-live="polite">
+        <span class="hero-tagline active">AI / ML Engineer</span>
+        <span class="hero-tagline">Transformers, built from scratch</span>
+        <span class="hero-tagline">NLP · RL · LLM agent systems</span>
+        <span class="hero-tagline">MSc Intelligent Systems @ TCD</span>
+        <span class="hero-tagline">Full-stack when it matters</span>
+      </div>
+      <p class="hero-bio fade-up">
+        I build intelligent systems end to end: <strong>GPT-style transformers from scratch in PyTorch</strong>, NLP pipelines that
+        find signal where lexical models can't, search and reinforcement-learning agents, and LLM-backed features shipped inside
+        production-style Java and React applications. Currently finishing an MSc in Computer Science (Intelligent Systems) at
+        Trinity College Dublin and <strong>open to AI / ML engineering roles from 2026</strong>.
+      </p>
+      <div class="hero-buttons fade-up">
+        <a href="https://drive.google.com/file/d/1BozSdoSjn7f3iQ7NVJr0wgcJo_wUBNPD/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M10 13h4M10 17h4M10 9h2"/></svg>
+          Resume
+        </a>
+        <a href="#projects" class="btn btn-secondary">View projects →</a>
+      </div>
+      <div class="hero-social fade-up">
+        <a href="https://github.com/Bhathrinaathan" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.337-2.22-.252-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+        <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="mailto:bhathrinaathan@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></a>
+        <span class="hero-loc"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dublin, Ireland</span>
+      </div>
     </div>
-    <p class="hero-bio fade-up">
-      Postgraduate MSc student in Computer Science — Intelligent Systems at Trinity College Dublin.
-      Building intelligent systems at the intersection of machine learning and software engineering.
-    </p>
-    <div class="hero-buttons fade-up">
-      <!--  Google Drive resume  -->
-      <a href="https://drive.google.com/file/d/1BozSdoSjn7f3iQ7NVJr0wgcJo_wUBNPD/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M10 13h4M10 17h4M10 9h2"/></svg>
-        Resume
-      </a>
-      <a href="#projects" class="btn btn-secondary" onclick="event.preventDefault();window.scrollTo({top:document.getElementById('projects').offsetTop-80,behavior:'smooth'})">View Projects →</a>
-    </div>
-    <div class="hero-social fade-up">
-      <a href="https://github.com/Bhathrinaathan" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.337-2.22-.252-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
-      <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-      <a href="mailto:bhathrinaathan@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></a>
+
+    <div class="hero-right fade-up">
+      <div class="terminal" aria-label="Profile summary, rendered as a terminal">
+        <div class="terminal-bar"><i></i><i></i><i></i><span class="terminal-title">bhathri@tcd — zsh</span></div>
+        <pre class="terminal-body"><code id="termOut"></code><span class="cursor" aria-hidden="true"></span></pre>
+      </div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="geo-canvas">
-      <div class="geo-shape"></div>
-      <div class="geo-shape"></div>
-      <div class="geo-shape"></div>
-      <div class="geo-shape"></div>
-      <div class="geo-shape"></div>
-      <div class="geo-shape"></div>
-    </div>
+
+  <!-- Proof strip -->
+  <div class="proof-strip fade-up" aria-label="Highlights">
+    <div class="proof-item"><div class="proof-num">78.2<small>%</small></div><div class="proof-label">exact-match arithmetic from a 2.24M-param transformer written from scratch</div></div>
+    <div class="proof-item"><div class="proof-num">0.89<small>AUC</small></div><div class="proof-label">fake-news detection using only temporal structure, zero lexical features</div></div>
+    <div class="proof-item"><div class="proof-num">20<small>k</small></div><div class="proof-label">games in a Minimax vs Q-Learning vs Double DQN tournament</div></div>
+    <div class="proof-item"><div class="proof-num">2<small>×</small></div><div class="proof-label">Oracle Cloud AI certifications (GenAI Professional, AI Foundations)</div></div>
   </div>
 </section>
 
 <!-- Projects -->
-<section class="section projects-section" id="projects">
-  <div class="section-label fade-up">Selected Work</div>
-  <div class="projects-header">
-    <h2 class="section-title fade-up" style="margin-bottom:0">Projects</h2>
-    <a href="projects.html" class="btn btn-secondary fade-up" style="font-size:13px;padding:8px 16px">View All →</a>
-  </div>
-  <div class="projects-scroll fade-up" id="projectsContainer"></div>
-  <div class="scroll-hint fade-up" style="margin-top:8px;justify-content:center">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    scroll for more
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div>
+        <div class="section-label">Selected work</div>
+        <h2 class="section-title">Projects with numbers attached</h2>
+        <p class="section-sub">Four pieces I'd walk a hiring manager through first. Each one states the problem, the approach, and what it actually scored.</p>
+      </div>
+      <a href="projects.html" class="link-arrow" id="allProjectsLink">View all projects →</a>
+    </div>
+    <div class="featured-grid fade-up" id="featuredContainer"></div>
   </div>
 </section>
 
 <!-- Experience -->
-<section class="section" id="experience" style="border-top:1px solid var(--border)">
-  <div class="section-label fade-up">Career</div>
-  <div class="projects-header">
-    <h2 class="section-title fade-up" style="margin-bottom:0">Experience</h2>
-    <a href="experience.html" class="btn btn-secondary fade-up" style="font-size:13px;padding:8px 16px">Full Details →</a>
-  </div>
-  <div class="exp-list fade-up">
-    <div class="exp-item">
-      <div class="exp-dot"></div>
-      <div class="exp-content">
-        <div class="exp-date">Jul 2023 – Aug 2024</div>
-        <div class="exp-role">Web Developer (Intern)</div>
-        <div class="exp-company">gCurv Technologies LLC</div>
-        <div class="exp-summary">Built full-stack MERN apps with Puppeteer automation, managed MongoDB/PostgreSQL databases, deployed on GCP.</div>
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div>
+        <div class="section-label">Career</div>
+        <h2 class="section-title">Experience</h2>
       </div>
+      <a href="experience.html" class="link-arrow">Full details →</a>
     </div>
-    <div class="exp-item">
-      <div class="exp-dot"></div>
-      <div class="exp-content">
-        <div class="exp-date">Jul 2022 – Aug 2022</div>
-        <div class="exp-role">Intern</div>
-        <div class="exp-company">Hexface Consulting, Chennai</div>
-        <div class="exp-summary">Built a Python question generator with NumPy/Matplotlib, processed multi-source datasets with validation scripts.</div>
+    <div class="timeline fade-up">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jul 2023 – Aug 2024</div>
+        <div class="timeline-role">Web Developer (Intern)</div>
+        <div class="timeline-company">gCurv Technologies LLC</div>
+        <ul class="timeline-bullets">
+          <li>Built a full-stack MERN application with Puppeteer automation that cut data-collection effort by 30%.</li>
+          <li>Designed MongoDB and PostgreSQL schemas for large-scale scraped data; automated update modules reduced manual maintenance by 60%.</li>
+          <li>Deployed on Google Cloud Platform, working in an Agile team.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jul 2022 – Aug 2022</div>
+        <div class="timeline-role">Software Intern</div>
+        <div class="timeline-company">Hexface Consulting, Chennai</div>
+        <ul class="timeline-bullets">
+          <li>Built a Python question-generator (NumPy, Matplotlib) that sped up quiz generation by 50% by automating JSON and LaTeX output.</li>
+          <li>Processed multi-source datasets with validation scripts that improved data accuracy by 20%.</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Education -->
-<section class="section" id="education" style="border-top:1px solid var(--border)">
-  <div class="section-label fade-up">Academic</div>
-  <h2 class="section-title fade-up">Education</h2>
-  <div class="edu-cards fade-up">
-    <div class="edu-card">
-      <div class="edu-card-accent"></div>
-      <div class="edu-card-body">
-        <div class="edu-card-degree">M.Sc in Computer Science — Intelligent Systems</div>
-        <div class="edu-card-school">Trinity College Dublin</div>
-        <div class="edu-card-date">Sep 2025 – Present</div>
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div>
+        <div class="section-label">Academic</div>
+        <h2 class="section-title">Education</h2>
       </div>
     </div>
-    <div class="edu-card">
-      <div class="edu-card-accent"></div>
-      <div class="edu-card-body">
-        <div class="edu-card-degree">B.E in Computer Science — CGPA 8.8/10</div>
-        <div class="edu-card-school">R.M.K College of Engineering and Technology, Chennai</div>
-        <div class="edu-card-date">Nov 2020 – Apr 2024</div>
+    <div class="edu-cards fade-up">
+      <div class="edu-card">
+        <div class="edu-degree">MSc Computer Science — Intelligent Systems</div>
+        <div class="edu-school">Trinity College Dublin</div>
+        <div class="edu-date">Sep 2025 – 2026</div>
+        <div class="edu-note">Deep learning, NLP, reinforcement learning, knowledge graphs, information retrieval, multi-agent systems, software engineering (XP).</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">B.E. Computer Science — CGPA 8.8 / 10</div>
+        <div class="edu-school">R.M.K College of Engineering and Technology, Chennai</div>
+        <div class="edu-date">Nov 2020 – Apr 2024</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Skills -->
-<section class="section skills-section" id="skills">
-  <div class="section-label fade-up">Tech Stack</div>
-  <h2 class="section-title fade-up">Skills</h2>
-  <div class="skills-grid fade-up">
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/python/3776AB" alt="">Python</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/openjdk/007396" alt="">Java</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="">JavaScript</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/c/A8B9CC" alt="">C</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="">PyTorch</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="">Transformers</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="">scikit-learn</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/spacy/09A3D5" alt="">spaCy</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/numpy/013243" alt="">NumPy</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="">React</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="">Node.js</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/springboot/6DB33F" alt="">Spring Boot</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/fastapi/009688" alt="">FastAPI</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/express/000000" alt="">Express.js</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/mongodb/47A248" alt="">MongoDB</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="">PostgreSQL</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="">Kafka</div>
-    <div class="skill-chip">AWS</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="">GCP</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/git/F05032" alt="">Git</div>
-    <div class="skill-chip"><img src="https://cdn.simpleicons.org/selenium/43B02A" alt="">Selenium</div>
-    <div class="skill-chip">NLP</div>
-    <div class="skill-chip">LLMs</div>
-    <div class="skill-chip">Reinforcement Learning</div>
-    <div class="skill-chip">Knowledge Graphs</div>
-    <div class="skill-chip">SPARQL</div>
-    <div class="skill-chip">Information Retrieval</div>
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div>
+        <div class="section-label">Tech stack</div>
+        <h2 class="section-title">Skills</h2>
+      </div>
+    </div>
+    <div class="skills-groups fade-up" id="skillsContainer"></div>
   </div>
 </section>
 
-<!-- Certifications & Courses -->
-<section class="section" id="certifications" style="border-top:1px solid var(--border)">
-  <div class="section-label fade-up">Credentials</div>
-  <div class="projects-header">
-    <h2 class="section-title fade-up" style="margin-bottom:0">Certifications & Courses</h2>
-  </div>
-  <div class="projects-scroll fade-up" id="certsContainer"></div>
-  <div class="scroll-hint fade-up" style="margin-top:8px;justify-content:center">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    scroll for more
+<!-- Certifications -->
+<section class="section" id="certifications">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div>
+        <div class="section-label">Credentials</div>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+    </div>
+    <div class="cert-grid fade-up" id="certsContainer"></div>
   </div>
 </section>
 
-<!-- Blog -->
-<section class="section" id="blog" style="border-top:1px solid var(--border)">
-  <div class="section-label fade-up">Writing</div>
-  <div class="projects-header">
-    <h2 class="section-title fade-up" style="margin-bottom:0">Blog</h2>
-    <a href="blog.html" class="btn btn-secondary fade-up" style="font-size:13px;padding:8px 16px">All Posts →</a>
+<!-- Blog (hidden until there is a post with a real link) -->
+<section class="section" id="blog" hidden>
+  <div class="container">
+    <div class="section-head fade-up">
+      <div>
+        <div class="section-label">Writing</div>
+        <h2 class="section-title">Latest posts</h2>
+      </div>
+      <a href="blog.html" class="link-arrow">All posts →</a>
+    </div>
+    <div class="blog-grid fade-up" id="blogContainer"></div>
   </div>
-  <div class="projects-scroll fade-up" id="blogContainer"></div>
-  <div id="blogEmpty" class="fade-up" style="display:none;text-align:center;padding:40px 24px;color:var(--text-muted);font-size:14px">No blog posts yet — check back soon.</div>
 </section>
 
 <!-- About -->
-<section class="section" id="about" style="border-top:1px solid var(--border)">
-  <div class="section-label fade-up">Who I Am</div>
-  <h2 class="section-title fade-up">About</h2>
-  <div style="display:grid;grid-template-columns:1fr 1.8fr;gap:48px;align-items:start">
-    <div class="fade-up" style="width:100%;aspect-ratio:1;background:var(--accent-light);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden"><img src="assets/profile.jpg" alt="Bhathrinaathan" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-    <div class="fade-up">
-      <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:16px">
-        Analytical and detail-oriented MSc Computer Science student at Trinity College Dublin with strong experience in Python, SQL, and data-driven development. Skilled in web technologies and automation through academic and industry projects, with a solid foundation in problem-solving and algorithms.
-      </p>
-      <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:24px">
-        Passionate about applying technology and analytics to enhance business processes, compliance, and decision-making. Eager to develop expertise at the intersection of data, technology, and finance.
-      </p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <div style="padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);font-size:13px;display:flex;align-items:center;gap:8px">
-          <svg width="16" height="16" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15l-3 3 1-4-3-3h4L12 7l1 4h4l-3 3 1 4z"/></svg>
-          OCI AI Foundations Associate
-        </div>
-        <div style="padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);font-size:13px;display:flex;align-items:center;gap:8px">
-          <svg width="16" height="16" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15l-3 3 1-4-3-3h4L12 7l1 4h4l-3 3 1 4z"/></svg>
-          OCI Generative AI Professional
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div>
+        <div class="section-label">Who I am</div>
+        <h2 class="section-title">About</h2>
+      </div>
+      <a href="about.html" class="link-arrow">More about me →</a>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo fade-up">
+        <picture>
+          <source srcset="assets/profile.webp" type="image/webp">
+          <img src="assets/profile-800.jpg" alt="Bhathrinaathan" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <div class="about-text fade-up">
+        <p>
+          I'm an MSc Computer Science (Intelligent Systems) student at Trinity College Dublin with a B.E. in Computer Science
+          and a year of industry experience building full-stack, data-heavy applications. What I enjoy most is
+          <strong>understanding a model well enough to build it from the ground up</strong>, and then being pragmatic enough
+          to ship it inside a real system.
+        </p>
+        <p>
+          Recent work spans decoder-only transformers written from scratch, an NLP study showing that tense structure alone
+          predicts fake news, search and reinforcement-learning agents benchmarked head-to-head, a semantic-web knowledge graph,
+          and an LLM-backed disaster-response platform built with a 10-person XP team. I care about measured results, clear
+          write-ups, and code other people can run.
+        </p>
+        <div class="about-facts">
+          <span class="fact"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15l-3 3 1-4-3-3h4L12 7l1 4h4l-3 3 1 4z"/></svg>OCI Generative AI Professional</span>
+          <span class="fact"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15l-3 3 1-4-3-3h4L12 7l1 4h4l-3 3 1 4z"/></svg>OCI AI Foundations Associate</span>
+          <span class="fact"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dublin, Ireland</span>
         </div>
       </div>
-      <a href="about.html" style="display:inline-block;margin-top:20px;font-size:13px;color:var(--accent);font-weight:500">Read more about me →</a>
     </div>
   </div>
 </section>
 
 <!-- Contact -->
-<section class="section" id="contact" style="border-top:1px solid var(--border)">
-  <div class="section-label fade-up">Get in Touch</div>
-  <h2 class="section-title fade-up">Contact</h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
-    <div class="fade-up" style="display:flex;flex-direction:column;gap:16px">
-      <a href="mailto:bhathrinaathan@gmail.com" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);transition:all 0.2s;font-size:14px" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="width:40px;height:40px;border-radius:10px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
-        <div><div style="font-size:12px;color:var(--text-muted)">Email</div><div style="font-family:var(--font-heading);font-weight:500">bhathrinaathan@gmail.com</div></div>
-      </a>
-      <a href="https://github.com/Bhathrinaathan" target="_blank" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);transition:all 0.2s;font-size:14px" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="width:40px;height:40px;border-radius:10px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="18" height="18" fill="var(--accent)" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.337-2.22-.252-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></div>
-        <div><div style="font-size:12px;color:var(--text-muted)">GitHub</div><div style="font-family:var(--font-heading);font-weight:500">Bhathrinaathan</div></div>
-      </a>
-      <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam" target="_blank" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);transition:all 0.2s;font-size:14px" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="width:40px;height:40px;border-radius:10px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="18" height="18" fill="var(--accent)" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
-        <div><div style="font-size:12px;color:var(--text-muted)">LinkedIn</div><div style="font-family:var(--font-heading);font-weight:500">bhathrinaathan-muthuramalingam</div></div>
-      </a>
-      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;display:flex;align-items:center;gap:6px">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Dublin, Ireland
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div>
+        <div class="section-label">Get in touch</div>
+        <h2 class="section-title">Let's talk</h2>
+        <p class="section-sub">Open to AI / ML engineering roles, research collaborations and interesting problems. Email is fastest.</p>
       </div>
     </div>
-    <form class="contact-form fade-up" onsubmit="event.preventDefault();this.querySelector('button').textContent='Sent!';setTimeout(()=>this.querySelector('button').textContent='Send Message',2000)" style="display:flex;flex-direction:column;gap:16px">
-      <label style="font-size:13px;font-weight:500;color:var(--text-muted);display:flex;flex-direction:column;gap:6px">Name <input type="text" placeholder="Your name" required style="padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:14px;color:var(--text);background:var(--bg-card);outline:none"></label>
-      <label style="font-size:13px;font-weight:500;color:var(--text-muted);display:flex;flex-direction:column;gap:6px">Email <input type="email" placeholder="you@example.com" required style="padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:14px;color:var(--text);background:var(--bg-card);outline:none"></label>
-      <label style="font-size:13px;font-weight:500;color:var(--text-muted);display:flex;flex-direction:column;gap:6px">Message <textarea rows="4" placeholder="What's on your mind?" required style="padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:14px;color:var(--text);background:var(--bg-card);outline:none;resize:vertical"></textarea></label>
-      <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send Message</button>
-    </form>
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <a href="mailto:bhathrinaathan@gmail.com" class="contact-card">
+          <div class="contact-card-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
+          <div><div class="contact-card-label">Email</div><div class="contact-card-value">bhathrinaathan@gmail.com</div></div>
+        </a>
+        <a href="https://github.com/Bhathrinaathan" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-card-icon"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.337-2.22-.252-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></div>
+          <div><div class="contact-card-label">GitHub</div><div class="contact-card-value">Bhathrinaathan</div></div>
+        </a>
+        <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-card-icon"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+          <div><div class="contact-card-label">LinkedIn</div><div class="contact-card-value">bhathrinaathan-muthuramalingam</div></div>
+        </a>
+        <div class="contact-loc"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Dublin, Ireland · GMT</div>
+      </div>
+      <form class="contact-form fade-up" id="contactForm" novalidate>
+        <label>Name <input type="text" name="name" placeholder="Your name" required autocomplete="name"></label>
+        <label>Email <input type="email" name="email" placeholder="you@example.com" required autocomplete="email"></label>
+        <label>Message <textarea name="message" rows="5" placeholder="What's on your mind?" required></textarea></label>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send message</button>
+        <span class="form-note">Opens a pre-filled draft in your mail app. Nothing is stored on this site.</span>
+      </form>
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
+</main>
+
 <footer class="footer">
-  <span>Bhathrinaathan © 2026</span>
-  <div class="footer-links">
-    <a href="https://github.com/Bhathrinaathan" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam" target="_blank">LinkedIn</a>
-    <a href="mailto:bhathrinaathan@gmail.com">Email</a>
+  <div class="container footer-inner">
+    <span>© 2026 Bhathrinaathan · Dublin, Ireland</span>
+    <div class="footer-links">
+      <a href="https://github.com/Bhathrinaathan" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:bhathrinaathan@gmail.com">Email</a>
+    </div>
+    <span class="mono">html · css · js · no framework</span>
   </div>
 </footer>
 
+<script src="tech-icons.js?v=20261116"></script>
+<script src="site.js?v=20261116"></script>
 <script>
-/* ── Tagline rotation ── */
-(function() {
+(function () {
+  const { projectCard, mailtoForm, reveal, esc, isUrl, fmtDate, renderSkills } = window.site;
+
+  /* ── Tagline rotation ── */
   const taglines = document.querySelectorAll('.hero-tagline');
   let current = 0;
-  setInterval(() => {
-    taglines[current].classList.remove('active');
-    taglines[current].classList.add('exit');
-    setTimeout(() => taglines[current].classList.remove('exit'), 500);
-    current = (current + 1) % taglines.length;
-    taglines[current].classList.add('active');
-  }, 3000);
-})();
-
-/* ── Load blogs from JSON ── */
-fetch('blogs.json')
-  .then(r => r.json())
-  .then(posts => {
-    const container = document.getElementById('blogContainer');
-    const empty = document.getElementById('blogEmpty');
-    if (!posts.length) { empty.style.display = 'block'; container.style.display = 'none'; return; }
-    posts.forEach(p => {
-      const card = document.createElement('a');
-      card.href = p.link || '#';
-      card.className = 'blog-card';
-      const d = new Date(p.date);
-      const dateStr = d.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
-      card.innerHTML = `
-        <div class="blog-card-date">${dateStr}</div>
-        <div class="blog-card-title">${p.title}</div>
-        <div class="blog-card-summary">${p.summary}</div>
-        <div class="project-card-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-      `;
-      container.appendChild(card);
-    });
-  });
-
-/* ── Load certifications from JSON ── */
-fetch('certifications.json')
-  .then(r => r.json())
-  .then(certs => {
-    const container = document.getElementById('certsContainer');
-    certs.forEach(c => {
-      const card = document.createElement('div');
-      card.className = 'cert-card';
-      card.innerHTML = `
-        <div class="cert-card-top"></div>
-        <div class="cert-card-body">
-          <div class="cert-card-issuer">${c.issuer}</div>
-          <div class="cert-card-title">${c.title}</div>
-          <div class="cert-card-desc">${c.description}</div>
-          <div class="cert-card-footer">
-            <div class="cert-card-date">${c.date}</div>
-            <div class="project-card-tags">
-              ${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-            </div>
-          </div>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  });
-
-/* ── Load projects from JSON ── */
-fetch('projects.json')
-  .then(r => r.json())
-  .then(projects => {
-    const container = document.getElementById('projectsContainer');
-    const ghIcon = `<svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.337-2.22-.252-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>`;
-    projects.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'project-card';
-      const hasGithub = p.github && p.github !== '#';
-      card.innerHTML = `
-        <div class="project-card-tech">
-          ${p.tags.slice(0, 4).map(t => window.techIcon.html(t, 22)).join('')}
-          ${p.tags.length > 4 ? `<span class="project-card-tech-more">+${p.tags.length - 4}</span>` : ''}
-        </div>
-        <div class="project-card-body">
-          <div class="project-card-title">${p.title}</div>
-          <div class="project-card-desc">${p.description}</div>
-          <div class="project-card-footer">
-            <span class="project-card-date">${p.date || ''}</span>
-            ${hasGithub ? `<a href="${p.github}" target="_blank" rel="noopener" class="btn-github">${ghIcon} GitHub</a>` : ''}
-          </div>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  });
-
-/* ── Scroll fade-in ── */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.15 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-/* ── Scroll spy for nav ── */
-(function() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a[data-section]');
-
-  function updateNav() {
-    let current = 'hero';
-    const scrollY = window.scrollY + 120;
-
-    sections.forEach(section => {
-      if (scrollY >= section.offsetTop) {
-        current = section.id;
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.dataset.section === current);
-    });
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(() => {
+      taglines[current].classList.remove('active');
+      taglines[current].classList.add('exit');
+      const prev = current;
+      setTimeout(() => taglines[prev].classList.remove('exit'), 500);
+      current = (current + 1) % taglines.length;
+      taglines[current].classList.add('active');
+    }, 3200);
   }
 
+  /* ── Terminal typing ── */
+  (function () {
+    const out = document.getElementById('termOut');
+    const P = 'p', K = 'k', S = 's', N = 'n', C = 'c';
+    const lines = [
+      [[P, '$ '], ['', 'cat profile.json']],
+      [['', '{']],
+      [['', '  '], [K, '"name"'], ['', ': '], [S, '"Bhathrinaathan M."'], ['', ',']],
+      [['', '  '], [K, '"role"'], ['', ': '], [S, '"AI / ML Engineer"'], ['', ',']],
+      [['', '  '], [K, '"education"'], ['', ': '], [S, '"MSc Intelligent Systems · Trinity College Dublin"'], ['', ',']],
+      [['', '  '], [K, '"focus"'], ['', ': ['], [S, '"transformers"'], ['', ', '], [S, '"nlp"'], ['', ', '], [S, '"reinforcement-learning"'], ['', ', '], [S, '"llm-agents"'], ['', '],']],
+      [['', '  '], [K, '"stack"'], ['', ': ['], [S, '"python"'], ['', ', '], [S, '"pytorch"'], ['', ', '], [S, '"java"'], ['', ', '], [S, '"react"'], ['', ', '], [S, '"postgres"'], ['', '],']],
+      [['', '  '], [K, '"shipped"'], ['', ': '], [N, '14'], ['', ', '], ['', '  '], [C, '// projects, 4 with published metrics']],
+      [['', '  '], [K, '"location"'], ['', ': '], [S, '"Dublin, IE"'], ['', ',']],
+      [['', '  '], [K, '"open_to"'], ['', ': '], [S, '"AI / ML roles · 2026"']],
+      [['', '}']],
+      [[P, '$ ']]
+    ];
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const spanFor = cls => { const s = document.createElement('span'); if (cls) s.className = cls; return s; };
+    if (reduce) {
+      lines.forEach((line, i) => { line.forEach(([cls, t]) => { const s = spanFor(cls); s.textContent = t; out.appendChild(s); }); if (i < lines.length - 1) out.appendChild(document.createTextNode('\n')); });
+      return;
+    }
+    let li = 0, ti = 0, ci = 0, span = null;
+    function step() {
+      if (li >= lines.length) return;
+      const line = lines[li];
+      if (ti >= line.length) {
+        li++; ti = 0; ci = 0; span = null;
+        if (li < lines.length) out.appendChild(document.createTextNode('\n'));
+        setTimeout(step, li === 1 ? 260 : 40);
+        return;
+      }
+      const [cls, text] = line[ti];
+      if (!span) { span = spanFor(cls); out.appendChild(span); }
+      span.textContent += text[ci++];
+      if (ci >= text.length) { ti++; ci = 0; span = null; }
+      setTimeout(step, li === 0 ? 55 : 9);
+    }
+    setTimeout(step, 500);
+  })();
+
+  /* ── Skills ── */
+  renderSkills(document.getElementById('skillsContainer'));
+
+  /* ── Featured projects ── */
+  fetch('projects.json').then(r => r.json()).then(projects => {
+    const c = document.getElementById('featuredContainer');
+    const featured = projects.filter(p => p.featured).slice(0, 4);
+    (featured.length ? featured : projects.slice(0, 4)).forEach(p => c.appendChild(projectCard(p, { featured: true })));
+    const all = document.getElementById('allProjectsLink');
+    if (all) all.textContent = `View all ${projects.length} projects →`;
+  }).catch(() => {});
+
+  /* ── Certifications ── */
+  fetch('certifications.json').then(r => r.json()).then(certs => {
+    const c = document.getElementById('certsContainer');
+    certs.forEach(x => {
+      const el = document.createElement(isUrl(x.link) ? 'a' : 'div');
+      if (isUrl(x.link)) { el.href = x.link; el.target = '_blank'; el.rel = 'noopener'; }
+      el.className = 'cert-card';
+      el.innerHTML = `
+        <div class="cert-issuer">${esc(x.issuer)}</div>
+        <div class="cert-title">${esc(x.title)}</div>
+        <div class="cert-desc">${esc(x.description)}</div>
+        <div class="cert-footer">
+          <span class="cert-date">${esc(x.date)}</span>
+          <div class="project-card-tags">${(x.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+        </div>`;
+      c.appendChild(el);
+    });
+  }).catch(() => {});
+
+  /* ── Blog: only show posts that link somewhere real ── */
+  fetch('blogs.json').then(r => r.json()).then(posts => {
+    const real = posts.filter(p => isUrl(p.link));
+    if (!real.length) return;
+    const section = document.getElementById('blog');
+    const c = document.getElementById('blogContainer');
+    real.slice(0, 3).forEach(p => {
+      const a = document.createElement('a');
+      a.href = p.link; a.className = 'blog-card'; a.target = '_blank'; a.rel = 'noopener';
+      a.innerHTML = `
+        <div class="blog-date">${esc(fmtDate(p.date))}</div>
+        <div class="blog-title">${esc(p.title)}</div>
+        <div class="blog-summary">${esc(p.summary)}</div>
+        <div class="project-card-tags">${(p.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>`;
+      c.appendChild(a);
+    });
+    section.hidden = false;
+    reveal();
+  }).catch(() => {});
+
+  /* ── Contact ── */
+  mailtoForm(document.getElementById('contactForm'), 'bhathrinaathan@gmail.com');
+
+  /* ── Scroll spy ── */
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+  const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+  function updateNav() {
+    const y = window.scrollY + 140;
+    let cur = null;
+    sections.forEach(s => { if (y >= s.offsetTop) cur = s.id; });
+    navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === cur));
+  }
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
-
-  // Smooth scroll for anchor links
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.getElementById(a.getAttribute('href').slice(1));
+      if (!t) return;
       e.preventDefault();
-      const target = document.getElementById(link.dataset.section);
-      if (target) {
-        const top = target.offsetTop - 80;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+      window.scrollTo({ top: t.offsetTop - 72, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + t.id);
     });
   });
 })();
 </script>
-
 </body>
 </html>

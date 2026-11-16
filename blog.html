@@ -3,126 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Bhathrinaathan</title>
-<meta name="description" content="Articles and thoughts on AI, software engineering, and computer science by Bhathrinaathan.">
-<meta property="og:title" content="Blog — Bhathrinaathan">
-<meta property="og:description" content="Articles and thoughts on AI, software engineering, and computer science by Bhathrinaathan.">
+<title>Writing — Bhathrinaathan</title>
+<meta name="description" content="Articles and notes on AI, machine learning and software engineering by Bhathrinaathan.">
+<link rel="canonical" href="https://bhathrinaathan.github.io/blog.html">
+<meta name="theme-color" content="#faf9f7">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Writing — Bhathrinaathan">
+<meta property="og:description" content="Articles and notes on AI, machine learning and software engineering by Bhathrinaathan.">
+<meta property="og:url" content="https://bhathrinaathan.github.io/blog.html">
+<meta property="og:image" content="https://bhathrinaathan.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E89849'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-size='20' font-weight='700' fill='white'%3EB%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles.css">
-<style>
-.page-hero { padding: 140px 48px 60px; border-bottom: 1px solid var(--border); }
-.page-hero h1 { font-family: var(--font-heading); font-size: 48px; font-weight: 700; letter-spacing: -1.5px; }
-.page-hero p { color: var(--text-muted); margin-top: 8px; font-size: 15px; }
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
-}
-.blog-post {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 28px;
-  display: flex; flex-direction: column; gap: 12px;
-  transition: transform 0.25s, box-shadow 0.25s;
-  text-decoration: none; color: inherit;
-}
-.blog-post:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-}
-.blog-post-date { font-size: 13px; color: var(--accent); font-weight: 500; }
-.blog-post-title {
-  font-family: var(--font-heading); font-size: 20px; font-weight: 600;
-  letter-spacing: -0.3px;
-}
-.blog-post-summary {
-  font-size: 14px; color: var(--text-muted); line-height: 1.7;
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-}
-.blog-post-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-
-.empty-state {
-  text-align: center; padding: 80px 24px; color: var(--text-muted);
-}
-.empty-icon {
-  width: 64px; height: 64px; border-radius: 16px;
-  background: var(--accent-light); margin: 0 auto 20px;
-  display: flex; align-items: center; justify-content: center;
-}
-.empty-state h3 {
-  font-family: var(--font-heading); font-size: 20px;
-  color: var(--text); margin-bottom: 8px;
-}
-.empty-state p { font-size: 14px; max-width: 360px; margin: 0 auto; }
-</style>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261116b">
 </head>
 <body>
-<nav class="nav">
-  <a href="index.html" class="nav-logo">B.</a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#projects">Projects</a>
-    <a href="index.html#experience">Experience</a>
-    <a href="index.html#education">Education</a>
-    <a href="index.html#skills">Skills</a>
-    <a href="index.html#certifications">Certifications</a>
-    <a href="index.html#blog">Blog</a>
-    <a href="about.html">About</a>
-    <a href="index.html#contact">Contact</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Home">B<span class="dot">.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="blog.html" class="active" aria-current="page">Writing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="icon-btn nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
 
-<section class="page-hero">
-  <h1 class="fade-up">Blog</h1>
-  <p class="fade-up">Thoughts and learnings.</p>
+<main>
+<section class="page-hero container">
+  <h1 class="fade-up">Writing</h1>
+  <p class="fade-up">Notes on things I've built and what I learned building them.</p>
 </section>
 
 <section class="section">
-  <div class="blog-grid fade-up" id="blogGrid"></div>
-  <div id="blogEmpty" style="display:none">
-    <div class="empty-state">
-      <div class="empty-icon">
-        <svg width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-      </div>
-      <h3>Coming soon</h3>
-      <p>Blog posts are on the way. Check back later for articles on AI, software engineering, and more.</p>
+  <div class="container">
+    <div class="blog-grid fade-up" id="blogGrid"></div>
+    <div id="blogEmpty" class="empty-state fade-up" hidden>
+      <div class="empty-icon"><svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+      <h3>Nothing published yet</h3>
+      <p>First posts are in draft: transformers from scratch, and why tense structure predicts fake news. Until then, the <a href="projects.html" style="color:var(--accent)">projects</a> are the best read.</p>
     </div>
   </div>
 </section>
+</main>
 
 <footer class="footer">
-  <span>Bhathrinaathan © 2026</span>
-  <div class="footer-links">
-    <a href="https://github.com/Bhathrinaathan">GitHub</a>
-    <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam">LinkedIn</a>
-    <a href="mailto:muthurab@tcd.ie">Email</a>
+  <div class="container footer-inner">
+    <span>© 2026 Bhathrinaathan · Dublin, Ireland</span>
+    <div class="footer-links">
+      <a href="https://github.com/Bhathrinaathan" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/bhathrinaathan-muthuramalingam" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:bhathrinaathan@gmail.com">Email</a>
+    </div>
+    <span class="mono">html · css · js · no framework</span>
   </div>
 </footer>
 
+<script src="tech-icons.js?v=20261116"></script>
+<script src="site.js?v=20261116"></script>
 <script>
-fetch('blogs.json').then(r=>r.json()).then(posts=>{
-  const grid=document.getElementById('blogGrid');
-  const empty=document.getElementById('blogEmpty');
-  if(!posts.length){ empty.style.display='block'; grid.style.display='none'; return; }
-  posts.forEach(p=>{
-    const card=document.createElement('a');
-    card.href=p.link||'#';
-    card.className='blog-post';
-    const d=new Date(p.date);
-    const dateStr=d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
-    card.innerHTML=`
-      <div class="blog-post-date">${dateStr}</div>
-      <div class="blog-post-title">${p.title}</div>
-      <div class="blog-post-summary">${p.summary}</div>
-      <div class="blog-post-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-    `;
-    grid.appendChild(card);
-  });
-});
-const observer=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');observer.unobserve(x.target)}}),{threshold:.15});
-document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+(function () {
+  const { esc, isUrl, fmtDate } = window.site;
+  fetch('blogs.json').then(r => r.json()).then(posts => {
+    const grid = document.getElementById('blogGrid');
+    const real = posts.filter(p => isUrl(p.link));
+    if (!real.length) { document.getElementById('blogEmpty').hidden = false; grid.hidden = true; return; }
+    real.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(p => {
+      const a = document.createElement('a');
+      a.href = p.link; a.className = 'blog-card'; a.target = '_blank'; a.rel = 'noopener';
+      a.innerHTML = `
+        <div class="blog-date">${esc(fmtDate(p.date))}</div>
+        <div class="blog-title">${esc(p.title)}</div>
+        <div class="blog-summary">${esc(p.summary)}</div>
+        <div class="project-card-tags">${(p.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>`;
+      grid.appendChild(a);
+    });
+  }).catch(() => { document.getElementById('blogEmpty').hidden = false; });
+})();
 </script>
 </body>
 </html>

@@ -34,7 +34,7 @@ Built a Python question-generator (NumPy, Matplotlib) that sped up quiz generati
 | Project | What it is | Result |
 |---|---|---|
 | [Knowledge-Graph-Augmented Retrieval for Supply-Chain Event Impact Identification](https://github.com/Bhathrinaathan/supply-chain-kg-rag) | MSc dissertation: 149-firm knowledge graph, hybrid KG retrieval, RAFT on Llama 3.1 8B | Hop-1 effect +1.44 pp, one-sided p = 0.016 |
-| [MathGPT & BooleanGPT](https://github.com/Bhathrinaathan/transformers-from-scratch) | Small decoder-only GPTs in PyTorch for arithmetic and Boolean logic | 78.2 % / 98 % exact match |
+| [MathGPT & BooleanGPT](https://github.com/Bhathrinaathan/mathgpt-booleangpt) | Small decoder-only GPTs in PyTorch for arithmetic and Boolean logic | 78.2 % / 98 % exact match |
 | [Temporal Signals of Deception](https://github.com/sneha-meto/Temporality) | Fake-news detection from tense and temporal structure only (group project) | 0.89 AUC, no word content |
 | [Game-Playing Agents](https://github.com/Bhathrinaathan/game-playing-agents) | Minimax, alpha-beta, Q-Learning and Double DQN in a 20,000-game tournament | 27× pruning speed-up |
 | [Maze: Search vs MDP](https://github.com/Bhathrinaathan/maze-search-vs-mdp) | BFS, DFS, A\* vs Value / Policy Iteration up to 100×100 | search 100–6,500× faster than MDP |

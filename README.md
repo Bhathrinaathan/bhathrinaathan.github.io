@@ -10,7 +10,7 @@
 
 I build software end to end, from data pipelines and models to the Java and React applications they ship in. My MSc work covered small GPT transformers in PyTorch, NLP, reinforcement-learning agents, knowledge graphs and an LLM-assisted disaster-response platform built with a ten-person Extreme Programming team. I care about measured results, clear write-ups and code other people can run.
 
-Right now I'm learning agentic AI, RAG systems and LLM-focused projects. Away from the keyboard I read neuroscience: I'm fascinated by how minds work, artificial and human.
+Right now I'm learning agentic AI, RAG systems and LLM-focused projects. Away from the keyboard I read neuroscience: I'm fascinated by how minds work, artificial and human. Beyond code, I'm always happy to talk about neuroscience, cars and films.
 
 **Open to software engineering, AI / ML and analyst roles in Dublin, available to start now.**
 

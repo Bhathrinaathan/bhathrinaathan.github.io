@@ -22,8 +22,8 @@
     ],
     "context": "MSc Dissertation · Trinity College Dublin",
     "image": null,
-    "link": "#",
-    "github": "#",
+    "link": "https://github.com/Bhathrinaathan/supply-chain-kg-rag",
+    "github": "https://github.com/Bhathrinaathan/supply-chain-kg-rag",
     "date": "2026"
   },
   {
@@ -291,23 +291,6 @@
     "link": "https://github.com/Bhathrinaathan/TaskList",
     "github": "https://github.com/Bhathrinaathan/TaskList",
     "date": "2023"
-  },
-  {
-    "id": "project-python-mini",
-    "title": "Python Mini Projects",
-    "description": "A collection of small Python projects and Jupyter notebooks exploring data analysis, automation, and algorithmic problem-solving.",
-    "tags": [
-      "Python",
-      "Jupyter",
-      "Data Analysis"
-    ],
-    "category": "Data & IR",
-    "featured": false,
-    "highlights": [],
-    "image": null,
-    "link": "https://github.com/Bhathrinaathan/Python-Mini-Projects",
-    "github": "https://github.com/Bhathrinaathan/Python-Mini-Projects",
-    "date": "2022 – 2023"
   },
   {
     "id": "project-selenium",

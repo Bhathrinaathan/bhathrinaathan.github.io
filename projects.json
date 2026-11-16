@@ -28,7 +28,7 @@
   },
   {
     "id": "project-transformers-gpt",
-    "title": "MathGPT & BooleanGPT — GPT Transformers in PyTorch",
+    "title": "MathGPT & BooleanGPT — Small GPT Transformers in PyTorch",
     "description": "Decoder-only GPT models written in PyTorch (no Hugging Face), adapted from the course's nanoGPT lecture code, to learn symbolic reasoning: arithmetic (MathGPT, 2.24M params, 78.2% exact match) and Boolean logic (BooleanGPT, 0.34M params, 98% exact match). Worked with self-attention, multi-head attention, positional embeddings and residual blocks, then analysed accuracy by operation (addition 84–87%, multiplication 68.7%), argued that network depth must grow with algorithmic complexity (O(n) addition vs O(n^2) multiplication), and tuned dropout against how deterministic each task is.",
     "tags": [
       "Python",

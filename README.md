@@ -1,6 +1,6 @@
 # Portfolio — Bhathrinaathan
 
-> Personal portfolio of **Bhathrinaathan Muthuramalingam Bhanumathi** — MSc Computer Science (Intelligent Systems) at Trinity College Dublin.
+> Personal portfolio of **Bhathrinaathan Muthuramalingam Bhanumathi** — MSc Computer Science (Intelligent Systems), Trinity College Dublin (completed September 2026).
 
 🔗 **Live site:** [bhathrinaathan.github.io](https://bhathrinaathan.github.io)
 
@@ -144,7 +144,7 @@ git push
 ## 📬 Contact
 
 - **Email** — [bhathrinaathan@gmail.com](mailto:bhathrinaathan@gmail.com)
-- **LinkedIn** — [bhathrinaathan-muthuramalingam](https://linkedin.com/in/bhathrinaathan-muthuramalingam)
+- **LinkedIn** — [bhathrinaathan](https://linkedin.com/in/bhathrinaathan)
 - **GitHub** — [@Bhathrinaathan](https://github.com/Bhathrinaathan)
 - **Location** — Dublin, Ireland
 

@@ -1,26 +1,26 @@
 [
   {
     "id": "project-dissertation-kg-rag",
-    "title": "Knowledge-Graph-Augmented Retrieval for Supply-Chain Event Impact — MSc Dissertation",
-    "description": "When a listed firm files an SEC Form 8-K, connected firms often move too. I built a provenance-bearing knowledge graph over 149 semiconductor, hardware and automotive firms (1,496 nodes, 2,610 typed edges of 7 relationship types, 1,444 hand-approved from 16,880 machine candidates, every edge time-stamped for leakage-free traversal), pulled 6,608 8-K filings and labelled 5,873 under three abnormal-return benchmarks, then tested a pre-registered protocol: BM25 + dense + graph-hop hybrid retrieval, RAG, and a QLoRA RAFT adapter on Llama 3.1 8B. Graph proximity is a real signal (one-hop firms +1.44 pp affected rate, p = 0.016, event-clustered bootstrap); graph-aware retrieval and fine-tuning were null at fixed context, and a sector heuristic beat every LLM configuration. A diagnosed negative result with a reusable dataset, plus a methodological finding on benchmark self-reference in event studies.",
+    "title": "Knowledge-Graph-Augmented Retrieval for Supply-Chain Event Impact Identification — MSc Dissertation",
+    "description": "When a listed firm files an SEC Form 8-K, connected firms sometimes move abnormally too. I built a time-aware knowledge graph over 149 semiconductor, hardware and automotive firms (7 relationship types; 2,610 typed edges in the exported graph, 1,107 of them between the 149 firms; 1,444 approved by hand from 16,880 LLM-extracted candidates, each edge carrying its source and a valid-from date), pulled 6,608 8-K filings and labelled 5,873 under three abnormal-return benchmarks. I then tested a pre-registered protocol on 292 held-out events: BM25, dense and graph-hop hybrid retrieval, RAG, and a 4-bit QLoRA (RAFT) adapter on Llama 3.1 8B, trained on free Kaggle GPUs. Firms one hop from the filer were affected more often (+1.44 percentage points, one-sided p = 0.016, event-clustered bootstrap), but the effect was significant under only one of the three benchmarks. Graph-aware retrieval and fine-tuning made no measurable difference at fixed context, and a sector heuristic (F1 0.184) beat the best Llama system (F1 0.074) because recall was the bottleneck. I audited the evaluation code, fixed four bugs and traced an apparent fine-tuning regression to a context-construction confound.",
     "tags": [
       "Python",
       "Knowledge Graphs",
       "Neo4j",
       "RAG",
       "LLMs",
-      "Fine-tuning",
+      "QLoRA Fine-tuning",
       "Event Study"
     ],
     "category": "AI / ML",
     "featured": true,
     "highlights": [
-      "149-firm KG, 2,610 provenance-bearing edges",
-      "6,608 8-K filings labelled",
-      "H1: +1.44 pp, p = 0.016",
-      "Llama 3.1 8B QLoRA (RAFT)"
+      "149-firm knowledge graph, 1,444 hand-approved edges",
+      "6,608 8-K filings pulled, 5,873 labelled",
+      "Hop-1 effect +1.44 pp, one-sided p = 0.016",
+      "Llama 3.1 8B, 4-bit QLoRA (RAFT)"
     ],
-    "context": "MSc Dissertation · TCD",
+    "context": "MSc Dissertation · Trinity College Dublin",
     "image": null,
     "link": "https://github.com/Bhathrinaathan/supply-chain-kg-rag",
     "github": "https://github.com/Bhathrinaathan/supply-chain-kg-rag",
@@ -29,7 +29,7 @@
   {
     "id": "project-transformers-gpt",
     "title": "MathGPT & BooleanGPT — Transformers from Scratch",
-    "description": "Decoder-only GPT transformer models built from scratch in PyTorch to learn symbolic reasoning: arithmetic (MathGPT, 2.24M params, 78.2% exact-match) and Boolean logic (BooleanGPT, 0.34M params, 98% exact-match). Implemented self-attention, multi-head attention, positional embeddings and residual blocks, then analysed how network depth must scale with algorithmic complexity (O(n) addition vs O(n^2) multiplication) and how dropout trades off against task determinism.",
+    "description": "Decoder-only GPT models written in PyTorch (no Hugging Face), adapted from the course's nanoGPT lecture code, to learn symbolic reasoning: arithmetic (MathGPT, 2.24M params, 78.2% exact match) and Boolean logic (BooleanGPT, 0.34M params, 98% exact match). Worked with self-attention, multi-head attention, positional embeddings and residual blocks, then analysed accuracy by operation (addition 84–87%, multiplication 68.7%), argued that network depth must grow with algorithmic complexity (O(n) addition vs O(n^2) multiplication), and tuned dropout against how deterministic each task is.",
     "tags": [
       "Python",
       "PyTorch",
@@ -40,19 +40,20 @@
     "category": "AI / ML",
     "featured": true,
     "highlights": [
-      "78.2% exact-match (MathGPT)",
-      "98% exact-match (BooleanGPT)",
-      "2.24M params, no libraries"
+      "78.2% exact match (MathGPT)",
+      "98% exact match (BooleanGPT)",
+      "2.24M and 0.34M parameters, PyTorch"
     ],
     "image": null,
     "link": "https://github.com/Bhathrinaathan/transformers-from-scratch",
     "github": "https://github.com/Bhathrinaathan/transformers-from-scratch",
-    "date": "2026"
+    "date": "2026",
+    "context": "Coursework · Trinity College Dublin"
   },
   {
     "id": "project-fakenews-temporal",
     "title": "Temporal Signals of Deception — Fake News NLP",
-    "description": "NLP study testing whether tense usage and temporal structure distinguish fake from verified news across 35,888 articles (ISOT dataset). Built a feature pipeline with spaCy (POS tagging, dependency parsing, tense/aspect classification), sentence-transformer and entity-grid coherence scores, and temporal-expression extraction. A classifier using only temporal/structural features reached 0.89 AUC with no lexical content, showing tense profile is a genuine, language-agnostic signal of deception.",
+    "description": "NLP study testing whether tense usage and temporal structure distinguish fake from verified news across 35,888 articles (ISOT dataset). Built a feature pipeline with spaCy (POS tagging, dependency parsing, tense and aspect classification), sentence-transformer and entity-grid coherence scores, and temporal-expression extraction. A classifier using only temporal and structural features reached 0.89 AUC with no word content, which suggests tense profile carries a real signal of deception in English news.",
     "tags": [
       "Python",
       "NLP",
@@ -63,9 +64,9 @@
     "category": "AI / ML",
     "featured": true,
     "highlights": [
-      "0.89 AUC, zero lexical features",
+      "0.89 AUC, no word content",
       "35,888 articles (ISOT)",
-      "Language-agnostic signal"
+      "Tense and structure only"
     ],
     "image": null,
     "link": "https://github.com/sneha-meto/Temporality",
@@ -99,31 +100,34 @@
   {
     "id": "project-disaster-ert",
     "title": "Response to City Disasters — Disaster Management Platform",
-    "description": "Multi-user disaster management platform built by a 10-person team using Extreme Programming (Spring Boot / Java 17, React, PostgreSQL, Kafka ingestion, AWS, GitHub Actions CI/CD). Civilians report incidents by form or voice and view shelters and evacuation routes; authorities validate reports through multi-source aggregation and confidence scoring, then dispatch resources. My contributions: the Emergency Response Team (ERT) resource-allocation engine (computes required vehicles from disaster type/severity/scale, routes through authority approval, then allocates nearest units across Garda / Fire Brigade / HSE / Council with cross-department substitution), an LLM-backed disaster-summary report generator, and the AI rerouting test cases plus cross-service integration.",
+    "description": "Multi-user disaster management platform built over two semesters by a 10-person team using Extreme Programming: six two-week sprints, rotating driver-navigator pairs, double code review and test-first development. Stack: Java / Spring Boot backend, React 19 + TypeScript frontend, PostgreSQL on AWS RDS, ECS behind a load balancer, S3, SQS, Docker and GitLab CI/CD, with HERE Maps for routing. Civilians report incidents by form or voice and view shelters and evacuation routes; authorities get a validation engine that checks each report against weather, traffic, places, social-media and public-transport sources and assigns a confidence score, then review and dispatch. My contributions: the Emergency Response Team (ERT) resource-allocation engine (works out the units each agency needs from disaster type, severity and scale, routes the request through authority approval, then assigns the nearest Garda, Fire Brigade, HSE and Council units with cross-department substitution), an LLM-generated disaster summary report, the AI rerouting test cases and cross-service integration. In semester 1 I also gathered and integrated external APIs for the thin-slice build. I demoed the platform live.",
     "tags": [
       "Java",
       "Spring Boot",
       "React",
+      "TypeScript",
       "PostgreSQL",
-      "Kafka",
-      "LLM Integration"
+      "AWS",
+      "Docker"
     ],
     "category": "Software",
     "featured": false,
     "highlights": [
-      "10-person XP team",
+      "10-person XP team, 6 two-week sprints",
       "ERT allocation engine",
-      "LLM report generator"
+      "LLM-generated summary report",
+      "Pair programming and double code review"
     ],
     "image": null,
     "link": "https://github.com/Bhathrinaathan/disaster-response-platform",
     "github": "https://github.com/Bhathrinaathan/disaster-response-platform",
-    "date": "2025 – 2026"
+    "date": "2025 – 2026",
+    "context": "Team project · Trinity College Dublin"
   },
   {
     "id": "project-multiagent-orchestration",
     "title": "LLM Multi-Agent Orchestration — Critical Review",
-    "description": "Critical literature review of 18 papers (2023–2026) on how LLM-based multi-agent systems are orchestrated, spanning centralized pipelines (MetaGPT, ChatDev), decentralized debate and ensembles (peer debate, Mixture-of-Agents), and learned / RL-optimized topologies (GPTSwarm, DyLAN, evolving orchestration). Evaluated each paradigm on reliability, scalability and cost, and synthesised the field's shift from hand-designed to learned orchestration in agentic AI.",
+    "description": "Critical literature review (a written review, not a built system) of 18 papers (2023–2026) on how LLM-based multi-agent systems are orchestrated: centralised pipelines (MetaGPT, ChatDev), decentralised debate and ensembles (peer debate, Mixture-of-Agents), and learned or RL-optimised topologies (GPTSwarm, DyLAN, evolving orchestration). Compared each paradigm on reliability, scalability and cost, and traced the field's shift from hand-designed to learned orchestration.",
     "tags": [
       "LLM Agents",
       "Agentic AI",
@@ -140,7 +144,8 @@
     "image": null,
     "link": "https://github.com/Bhathrinaathan/llm-multiagent-orchestration-review",
     "github": "https://github.com/Bhathrinaathan/llm-multiagent-orchestration-review",
-    "date": "2026"
+    "date": "2026",
+    "context": "Group literature review · Trinity College Dublin"
   },
   {
     "id": "project-carskg",

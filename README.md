@@ -1,153 +1,69 @@
-# Portfolio — Bhathrinaathan
+# Bhathrinaathan Muthuramalingam Bhanumathi
 
-> Personal portfolio of **Bhathrinaathan Muthuramalingam Bhanumathi** — MSc Computer Science (Intelligent Systems), Trinity College Dublin (completed September 2026).
+**Software Engineer · AI / ML** — MSc Computer Science (Intelligent Systems) graduate, Trinity College Dublin. Based in Dublin, Ireland.
 
-🔗 **Live site:** [bhathrinaathan.github.io](https://bhathrinaathan.github.io)
-
----
-
-## ✨ About
-
-A minimalist, JSON-driven portfolio site built with vanilla HTML, CSS, and JavaScript — no frameworks, no build step. Designed to be lightweight, fast, and easy to maintain: all project, certification, and blog content lives in JSON files, so adding new entries doesn't require touching any HTML.
-
-## 🎨 Features
-
-- **Dark & light mode** — follows the OS preference, with a toggle in the nav that remembers the choice (no flash on load)
-- **Terminal hero** — a typed `profile.json` panel next to the intro, plus a proof strip of headline metrics
-- **Featured projects** on the home page with metric chips; full grid with category filters on `projects.html`
-- **JSON-driven content** — update entries without editing HTML
-- **Responsive** — mobile menu, fluid type, no horizontal scroll at 375px
-- **Accessible** — keyboard focus rings, `aria-*` on controls, `prefers-reduced-motion` respected
-- **Fast** — 35 KB WebP profile photo (down from 5 MB), preconnected fonts, no framework
-- **SEO** — Open Graph image, canonical URLs, JSON-LD Person schema, `robots.txt`, `sitemap.xml`
-- **Contact form** that opens a pre-filled email draft (no backend, nothing stored)
-
-## 🛠️ Tech Stack
-
-| Layer | Tool |
-|---|---|
-| Markup | HTML5 |
-| Styling | CSS3 with custom properties + flex/grid |
-| Logic | Vanilla JavaScript (ES6+) |
-| Fonts | Space Grotesk + DM Sans + JetBrains Mono (Google Fonts) |
-| Hosting | GitHub Pages |
-
-No frameworks. No build tools. Just the web platform.
-
-## 📂 Project Structure
-
-```
-portfolio/
-├── index.html             # Homepage with all sections
-├── projects.html          # Full projects grid
-├── about.html             # Detailed about page
-├── experience.html        # Career timeline
-├── blog.html              # Blog listing
-├── contact.html           # Contact page
-├── styles.css             # Design system: light/dark tokens + all components
-├── site.js                # Theme toggle, mobile nav, project cards, skills list, mailto form
-├── tech-icons.js          # Tag → icon lookup (Simple Icons CDN + custom SVGs)
-├── projects.json          # ← Edit to add projects
-├── certifications.json    # ← Edit to add certifications
-├── blogs.json             # ← Edit to add blog posts
-├── robots.txt / sitemap.xml
-└── assets/
-    ├── Bhathrinaathan-Resume.pdf
-    ├── profile.webp / profile-800.jpg
-    └── og-image.png       # Social share card
-```
-
-## ✏️ Adding Content
-
-### New project
-
-Append an entry to **`projects.json`**:
-
-```json
-{
-  "id": "project-new",
-  "title": "Project Name",
-  "description": "What the problem was, what you built, and what it scored.",
-  "tags": ["Python", "PyTorch"],
-  "category": "AI / ML",
-  "featured": false,
-  "highlights": ["0.91 F1", "12k samples"],
-  "context": "Coursework · TCD",
-  "image": null,
-  "link": "https://github.com/Bhathrinaathan/repo",
-  "github": "https://github.com/Bhathrinaathan/repo",
-  "date": "May 2026"
-}
-```
-
-- `category` drives the filter pills on `projects.html` (`AI / ML`, `Agents & RL`, `Data & IR`, `Software`, or add your own).
-- `featured: true` puts the project in the home-page grid (first four featured entries are shown).
-- `highlights` are short metric chips shown above the description. Keep them to real numbers.
-- The GitHub button appears automatically when `github` is a real URL (not `"#"`); otherwise the `context` label is shown.
-- Skills live in the `SKILLS` array at the bottom of `site.js` and render on both the home page and `about.html`.
-
-### New certification
-
-Append to **`certifications.json`**:
-
-```json
-{
-  "id": "cert-new",
-  "title": "Certification Name",
-  "issuer": "Issuer",
-  "date": "2026",
-  "description": "What the certification covers.",
-  "tags": ["AI", "Cloud"],
-  "link": "#"
-}
-```
-
-### New blog post
-
-Append to **`blogs.json`**. Posts whose `link` is not a real URL are treated as drafts and hidden; the Writing section on the home page only appears once at least one post is published.
-
-```json
-{
-  "id": "blog-new",
-  "title": "Post Title",
-  "summary": "Short preview text.",
-  "date": "2026-05-15",
-  "tags": ["AI", "Tutorial"],
-  "link": "https://your-post-url"
-}
-```
-
-## 🚀 Running Locally
-
-Because the site fetches JSON files, opening `index.html` directly with `file://` won't work — use a local server:
-
-```bash
-# Python 3
-python3 -m http.server 8000
-
-# or Node.js
-npx serve
-```
-
-Then open `http://localhost:8000`.
-
-## 🌐 Deployment
-
-The site is deployed via **GitHub Pages** from the `main` branch. Any push to `main` auto-rebuilds the live site within ~1 minute.
-
-```bash
-git add .
-git commit -m "Add new project"
-git push
-```
-
-## 📬 Contact
-
-- **Email** — [bhathrinaathan@gmail.com](mailto:bhathrinaathan@gmail.com)
-- **LinkedIn** — [bhathrinaathan](https://linkedin.com/in/bhathrinaathan)
-- **GitHub** — [@Bhathrinaathan](https://github.com/Bhathrinaathan)
-- **Location** — Dublin, Ireland
+🔗 [bhathrinaathan.github.io](https://bhathrinaathan.github.io) · [linkedin.com/in/bhathrinaathan](https://linkedin.com/in/bhathrinaathan) · [github.com/Bhathrinaathan](https://github.com/Bhathrinaathan) · bhathrinaathan@gmail.com
 
 ---
 
-<sub>© 2026 Bhathrinaathan. Built with HTML, CSS, and a lot of curiosity.</sub>
+## About me
+
+I build software end to end, from data pipelines and models to the Java and React applications they ship in. My MSc work covered small GPT transformers in PyTorch, NLP, reinforcement-learning agents, knowledge graphs and an LLM-assisted disaster-response platform built with a ten-person Extreme Programming team. I care about measured results, clear write-ups and code other people can run.
+
+Right now I'm learning agentic AI, RAG systems and LLM-focused projects. Away from the keyboard I read neuroscience: I'm fascinated by how minds work, artificial and human.
+
+**Open to software engineering, AI / ML and analyst roles in Dublin, available to start now.**
+
+## Education
+
+| | | |
+|---|---|---|
+| **MSc Computer Science — Intelligent Systems** | Trinity College Dublin | Sep 2025 – Sep 2026 |
+| **B.E. Computer Science** (CGPA 8.8 / 10) | R.M.K. College of Engineering and Technology, Chennai | Nov 2020 – Apr 2024 |
+
+## Experience
+
+**Web Developer (Intern)** — gCurv Technologies LLC · Jul 2023 – Aug 2024 (14 months)
+Built a full-stack MERN application with Puppeteer automation that cut data-collection effort by 30%; designed MongoDB and PostgreSQL schemas for large-scale scraped data, with automated update modules that reduced manual maintenance by 60%; deployed on Google Cloud Platform in an Agile team.
+
+**Intern** — Hexface Consulting, Chennai · Jul 2022 – Aug 2022
+Built a Python question-generator (NumPy, Matplotlib) that sped up quiz generation by 50% by automating JSON and LaTeX output; processed multi-source datasets with validation scripts that improved data accuracy by 20%.
+
+## Selected projects
+
+| Project | What it is | Result |
+|---|---|---|
+| [Knowledge-Graph-Augmented Retrieval for Supply-Chain Event Impact](https://github.com/Bhathrinaathan/supply-chain-kg-rag) | MSc dissertation: 149-firm knowledge graph, hybrid KG retrieval, RAFT on Llama 3.1 8B | Hop-1 effect +1.44 pp, one-sided p = 0.016 |
+| [MathGPT & BooleanGPT](https://github.com/Bhathrinaathan/transformers-from-scratch) | Small decoder-only GPTs in PyTorch for arithmetic and Boolean logic | 78.2 % / 98 % exact match |
+| [Temporal Signals of Deception](https://github.com/sneha-meto/Temporality) | Fake-news detection from tense and temporal structure only (group project) | 0.89 AUC, no word content |
+| [Game-Playing Agents](https://github.com/Bhathrinaathan/game-playing-agents) | Minimax, alpha-beta, Q-Learning and Double DQN in a 20,000-game tournament | 27× pruning speed-up |
+| [Maze: Search vs MDP](https://github.com/Bhathrinaathan/maze-search-vs-mdp) | BFS, DFS, A\* vs Value / Policy Iteration up to 100×100 | search 3,000–6,600× faster |
+| [CarsKG](https://github.com/Bhathrinaathan/cars-knowledge-graph) | OWL ontology, RML uplift, SPARQL and SHACL in GraphDB | 7 queries, 7 shapes |
+| [Lucene Search Engine](https://github.com/Bhathrinaathan/Lucene-search) | 25 analyser × similarity configurations on the Cranfield collection | MAP 0.425 (BM25) |
+| [Disaster Response Platform](https://github.com/Bhathrinaathan/disaster-response-platform) | Grok-backed summary services from a 10-person XP team build | Spring Boot · React · AWS |
+| [Multi-Agent Orchestration Review](https://github.com/Bhathrinaathan/llm-multiagent-orchestration-review) | Group literature review of 18 papers on LLM multi-agent systems | Section 7 and figures |
+
+The full list is on the [projects page](https://bhathrinaathan.github.io/projects.html).
+
+## Skills
+
+- **Languages:** Python, Java, JavaScript, TypeScript, SQL, C
+- **AI & ML:** PyTorch, scikit-learn, spaCy, NumPy, NLP, LLMs and RAG, reinforcement learning, knowledge graphs (OWL, RDF, SPARQL, SHACL), information retrieval
+- **Backend & web:** Spring Boot, FastAPI, React, Node.js, Express, REST APIs
+- **Data & cloud:** PostgreSQL, MongoDB, AWS, GCP, Azure, Docker, Git, Selenium, Postman
+
+## Certifications
+
+- Oracle Cloud Infrastructure 2025 Certified Generative AI Professional
+- Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate
+
+## Contact
+
+- **Email:** bhathrinaathan@gmail.com
+- **LinkedIn:** [linkedin.com/in/bhathrinaathan](https://linkedin.com/in/bhathrinaathan)
+- **GitHub:** [@Bhathrinaathan](https://github.com/Bhathrinaathan)
+- **Location:** Dublin, Ireland
+
+---
+
+<sub>This repository is the source of [bhathrinaathan.github.io](https://bhathrinaathan.github.io). © 2026 Bhathrinaathan.</sub>

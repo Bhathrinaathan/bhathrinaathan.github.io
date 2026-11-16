@@ -22,13 +22,13 @@
     ],
     "context": "MSc Dissertation · Trinity College Dublin",
     "image": null,
-    "link": "https://github.com/Bhathrinaathan/supply-chain-kg-rag",
-    "github": "https://github.com/Bhathrinaathan/supply-chain-kg-rag",
+    "link": "#",
+    "github": "#",
     "date": "2026"
   },
   {
     "id": "project-transformers-gpt",
-    "title": "MathGPT & BooleanGPT — Transformers from Scratch",
+    "title": "MathGPT & BooleanGPT — GPT Transformers in PyTorch",
     "description": "Decoder-only GPT models written in PyTorch (no Hugging Face), adapted from the course's nanoGPT lecture code, to learn symbolic reasoning: arithmetic (MathGPT, 2.24M params, 78.2% exact match) and Boolean logic (BooleanGPT, 0.34M params, 98% exact match). Worked with self-attention, multi-head attention, positional embeddings and residual blocks, then analysed accuracy by operation (addition 84–87%, multiplication 68.7%), argued that network depth must grow with algorithmic complexity (O(n) addition vs O(n^2) multiplication), and tuned dropout against how deterministic each task is.",
     "tags": [
       "Python",
@@ -100,7 +100,7 @@
   {
     "id": "project-disaster-ert",
     "title": "Response to City Disasters — Disaster Management Platform",
-    "description": "Multi-user disaster management platform built over two semesters by a 10-person team using Extreme Programming: six two-week sprints, rotating driver-navigator pairs, double code review and test-first development. Stack: Java / Spring Boot backend, React 19 + TypeScript frontend, PostgreSQL on AWS RDS, ECS behind a load balancer, S3, SQS, Docker and GitLab CI/CD, with HERE Maps for routing. Civilians report incidents by form or voice and view shelters and evacuation routes; authorities get a validation engine that checks each report against weather, traffic, places, social-media and public-transport sources and assigns a confidence score, then review and dispatch. My contributions: the Emergency Response Team (ERT) resource-allocation engine (works out the units each agency needs from disaster type, severity and scale, routes the request through authority approval, then assigns the nearest Garda, Fire Brigade, HSE and Council units with cross-department substitution), an LLM-generated disaster summary report, the AI rerouting test cases and cross-service integration. In semester 1 I also gathered and integrated external APIs for the thin-slice build. I demoed the platform live.",
+    "description": "Multi-user disaster management platform built over two semesters by a 10-person team using Extreme Programming: six two-week sprints, rotating driver-navigator pairs, double code review and test-first development. Stack: Java / Spring Boot backend, React 19 + TypeScript frontend, PostgreSQL on AWS RDS, ECS behind a load balancer, S3, SQS, Docker and GitLab CI/CD, with HERE Maps for routing. Civilians report incidents by form or voice and view shelters and evacuation routes; authorities get a validation engine that checks each report against weather, traffic, places, social-media and public-transport sources and assigns a confidence score, then review and dispatch. My contributions: the Emergency Response Team (ERT) resource-allocation engine (works out the units each agency needs from disaster type, severity and scale, routes the request through authority approval, then assigns the nearest Garda, Fire Brigade, HSE and Council units with cross-department substitution), a Grok-generated (xAI API) disaster summary report, the AI rerouting test cases and cross-service integration. In semester 1 I also gathered and integrated external APIs for the thin-slice build. I demoed the platform live.",
     "tags": [
       "Java",
       "Spring Boot",
@@ -115,7 +115,7 @@
     "highlights": [
       "10-person XP team, 6 two-week sprints",
       "ERT allocation engine",
-      "LLM-generated summary report",
+      "Grok-generated summary report",
       "Pair programming and double code review"
     ],
     "image": null,
